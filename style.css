@@ -843,12 +843,12 @@ body {
    .callbacks_nav.next {
     left: auto;
     background:url(img/right-panah.png) no-repeat 0 0;
-    right: 10;
+    right: 15;
    }
    .callbacks_nav.prev {
     left: auto;
     background:url(img/left-panah.png) no-repeat 0 0;
-    left: 10;
+    left: 15;
    }
    #slider3-pager a {
     display:inline-block
