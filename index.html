@@ -1,9 +1,6 @@
-<html
-  class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"
-  lang="zxx">
+<html>
 
 <head>
-
   <title>MEDIA SOLUSI</title>
   <link rel="shortcut icon" type="image/x-icon" href="https://trekkersshoes.com/assets/img/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,6 +29,13 @@
   <link href="form-awesome.css" rel="stylesheet">
   <link href="shop.css" rel="stylesheet">
   <link href="lembar.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+    crossorigin="anonymous" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+    crossorigin="anonymous" />
 
   <!-- <link
     href="https://fonts.googleapis.com/css?family=Montserrat:100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
@@ -101,7 +105,13 @@
       }
     }
   </style>
-
+  <style>
+    #owl-demo .item img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
@@ -182,6 +192,15 @@
         <div class="clearfix"> </div>
       </div>
       <!-- //slider -->
+      <!-- coba -->
+      <!-- <div id="owl-demo" class="owl-carousel owl-theme">
+
+        <div class="item"><img src="sepatu 1.jpg" alt="The Last of us"></div>
+        <div class="item"><img src="sepatu 2.jpg" alt="GTA V"></div>
+        <div class="item"><img src="sepatu 3.jpg" alt="Mirror Edge"></div>
+
+      </div> -->
+      <!-- end_coba -->
     </div>
   </div>
   <!-- //banner -->
@@ -461,6 +480,12 @@
   <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;">
     </span></a>
   <!-- js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+    crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://trekkersshoes.com/assets/js/jquery-2.1.4.min.js"></script>
   <script type="text/javascript" src="https://trekkersshoes.com/assets/js/floating-wpp.min.js"></script>
   <script>
@@ -503,22 +528,42 @@
   <!--search-bar-->
   <script src="https://trekkersshoes.com/assets/js/search.js"></script>
   <!--//search-bar-->
-  <script src="https://trekkersshoes.com/assets/js/responsiveslides.min.js"></script>
+  <script src="owlCarousel.js"></script>
+  <script src="responsiveslides.min.js"></script>
   <script>
-    $(function () {
-      $("#slider4").responsiveSlides({
-        auto: true,
-        pager: true,
-        nav: true,
-        speed: 1000,
-        namespace: "callbacks",
-        before: function () {
-          $('.events').append("<li>before event fired.</li>");
-        },
-        after: function () {
-          $('.events').append("<li>after event fired.</li>");
-        }
+    // $(function () {
+    //   $("#slider4").responsiveSlides({
+    //     auto: true,
+    //     pager: true,
+    //     nav: true,
+    //     speed: 1000,
+    //     namespace: "callbacks",
+    //     before: function () {
+    //       $('.events').append("<li>before event fired.</li>");
+    //     },
+    //     after: function () {
+    //       $('.events').append("<li>after event fired.</li>");
+    //     }
+    //   });
+    // });
+    $(document).ready(function () {
+
+      $("#owl-demo").owlCarousel({
+
+        navigation: true, // Show next and prev buttons
+        slideSpeed: 300,
+        paginationSpeed: 400,
+        singleItem: true
+
+        // "singleItem:true" is a shortcut for:
+        // items : 1, 
+        // itemsDesktop : false,
+        // itemsDesktopSmall : false,
+        // itemsTablet: false,
+        // itemsMobile : false
+
       });
+
     });
   </script>
   <!-- js for portfolio lightbox -->
