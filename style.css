@@ -1113,6 +1113,7 @@ body {
     left:-66px;
     height:40px;
     width:40px;
+    padding: 7;
     background:none;
     border:2px solid #000;
     border-radius:50%;
