@@ -7,7 +7,7 @@
     <div class="col-md-6 style-grid style-grid-2">
         <div class="style-image-1_info">
             <div class="style-grid-2-text_info">
-                <h3>Ladies & Gentlemen</h3>
+                <h3>Ladies</h3>
                 <p>Temukan koleksi terbaru sneakers dan flat shoes wanita</p>
                 <div class="shop-button">
                     <a href="<?= base_url('produk/wanita'); ?>">Lihat Disini</a>
