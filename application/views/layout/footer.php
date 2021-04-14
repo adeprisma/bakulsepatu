@@ -92,7 +92,7 @@
                 <h2><a href="index.html"><img src="https://trekkersshoes.com/assets/img/logo.png"
                             style="margin-top:-25px;" width="200px"></a></h2>
                 <p><b>Shoes is Your Bestfriend</b></p>
-                <p><b>Shoes are life</b></p>
+                
             </div>
             <div class="col-md-9 footer-right">
                 <div class="sign-grds">

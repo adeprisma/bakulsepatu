@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- custom-theme -->
    
+    <link rel="stylesheet" href="<?= base_url('assets/css/pagination.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/form-elements.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/shop.css') ?>" media="screen" property="">
@@ -39,7 +40,7 @@
 <div class="header_agileits">
     <div class="logo">
         <h1>
-            <a href="http://bakulsepatu.com/">
+            <a href="<?= base_url(); ?>">
                 <img class="navbar-brand-beranda" src="https://trekkersshoes.com/assets/img/logo.png">
             </a>
         </h1>

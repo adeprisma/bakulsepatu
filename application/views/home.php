@@ -32,7 +32,7 @@
                     <h3>Men</h3>
                     <p>Temukan sneakers dan sandal yang tepat untuk melengkapi gaya pria masa kini</p>
                     <div class="shop-button">
-                        <a href="produk/produkpria.html">Lihat Disini</a>
+                        <a href="<?= base_url('produk/pria'); ?>">Lihat Disini</a>
                     </div>
                 </div>
             </div>
@@ -43,7 +43,8 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 grids_sec_2_left">            <div class="style-image-2">
+        <div class="col-md-6 grids_sec_2_left">          
+              <div class="style-image-2">
                 <img src="assets/img/sl-marvel-tkl.jpg">
                 <div class="style-grid-2-text">
                     <h3>SL-MARVEL-TKL</h3>
