@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/style7.css') ?>" media="all">
     <link rel="stylesheet" href="<?= base_url('assets/css/floating-wpp.css') ?>" media="all"> 
     <link rel="stylesheet" href="<?= base_url('assets/font-awesome/font-awesome.css') ?>">
+    <link rel="stylesheet" href="<?= base_url('assets/font-awesome/font-awesome.min.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/lembar.css') ?>">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script type="application/x-javascript">
