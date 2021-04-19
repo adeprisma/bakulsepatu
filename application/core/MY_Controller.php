@@ -20,3 +20,28 @@ class MY_Controller extends CI_Controller {
     }
 
 }
+
+class Admin_Controller extends CI_Controller {
+
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+    public function isLoggedIn()
+    {
+        if (empty($this->session->userdata('is_login'))) {
+            redirect('admin');
+        }
+    }
+
+    public function layout($viewname, $data)
+    {
+        $this->isLoggedIn();
+        $this->load->view('admin/layout/header', FALSE);
+        $this->load->view($viewname, $data, FALSE);
+        $this->load->view('admin/layout/footer');
+       
+    }
+
+}

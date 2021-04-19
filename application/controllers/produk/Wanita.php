@@ -7,11 +7,22 @@ class Wanita extends MY_Controller
 	public function __construct()
     {
         parent::__construct();
+		$this->load->model(['MWanita']);
     }
 
 	public function index()
 	{
-		$this->layout('produk', 'produk/wanita', null);
+		$url = base_url();
+		$data['produk'] = $this->MWanita->count();
+		$data['wanita'] = $this->MWanita->getWanita();
+		$data['logo'] = '<div class="logo">
+							<h1>
+								<a href='.$url.'>
+									<img class="navbar-brand-produk" src="https://trekkersshoes.com/assets/img/logo.png">
+								</a>
+							</h1>
+						</div>';
+		$this->layout('produk', 'produk/wanita', $data);
 	}
 
 }
