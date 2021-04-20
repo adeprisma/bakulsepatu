@@ -50,8 +50,8 @@
         <button type="button" class="overlay-close"><i class="fa fa-times" aria-hidden="true"></i></button>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="produk/produkbaru.html">New Arrivals</a></li>
+                <li><a href="<?= base_url() ?>">Home</a></li>
+                <li><a href="produk/produkbaru">New Arrivals</a></li>
                 <li><a href="produk/wanita">Ladies</a></li>
                 <li><a href="produk/pria">Men</a></li>
                 <li><a href="produk/anak">Kids</a></li>

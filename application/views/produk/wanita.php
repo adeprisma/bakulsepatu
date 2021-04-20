@@ -13,7 +13,7 @@
 						<img src="<?= base_url('assets/img/sepatu/wanita/'. $row['gambar1']) ?>" alt="">
 						<div class="men-cart-pro">
 							<div class="inner-men-cart-pro">
-								<a href="https://trekkersshoes.com/produk/detail/U0wtVkVOVVM=/view/MA==" class="link-product-add-cart">Detail</a>
+								<a href="https://bakulsepatu.com/produk/detail/" class="link-product-add-cart">Detail</a>
 							</div>
 						</div>
 						<span class="product-new-top">Produk Baru</span>																
@@ -23,7 +23,7 @@
 					</div>
 					<div class="item-info-product">
 						<h4>
-							<a href="https://trekkersshoes.com/produk/detail/U0wtVkVOVVM=/view/MA=="><?= $row['nama_sepatu'] ?></a>
+							<a href="https://bakulsepatu.com/produk/detail/"><?= $row['nama_sepatu'] ?></a>
 						</h4>
 						<!-- <div class="info-product-price">
 							<div class="grid_meta">
