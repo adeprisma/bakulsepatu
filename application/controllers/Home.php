@@ -11,7 +11,16 @@ class Home extends MY_Controller
 
 	public function index()
 	{
-		$this->layout('home', 'home', null);
+		$url = base_url();
+		$data['logo'] = '<div class="logo">
+							<h1>
+								<a href='.$url.'>
+									<img class="navbar-brand-beranda" src="https://trekkersshoes.com/assets/img/logo.png">
+								</a>
+							</h1>
+						</div>';
+
+		$this->layout('home', 'home', $data);
 	}
 
 }

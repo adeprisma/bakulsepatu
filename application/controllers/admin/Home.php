@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Wanita extends MY_Controller 
+class Home extends Admin_Controller
 {
 
 	public function __construct()
@@ -11,7 +11,13 @@ class Wanita extends MY_Controller
 
 	public function index()
 	{
-		$this->layout('produk', 'produk/wanita', null);
+		$this->layout('admin/home', null);
 	}
+
+	public function signout()
+    {
+        $this->session->sess_destroy();
+        redirect('admin');
+    }
 
 }
