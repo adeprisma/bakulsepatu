@@ -55,4 +55,12 @@ class Login extends Admin_Controller
 		$this->load->view('admin/login', FALSE);
 	}
 
+	// $data = [
+			// 	"password" => password_hash('admin', PASSWORD_BCRYPT)
+			// ];
+
+			// $this->db->where('username', 'widya');
+			// $this->db->update('admin', $data);
+			// die();
+
 }
