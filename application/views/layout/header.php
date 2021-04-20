@@ -52,9 +52,9 @@
             <ul>
                 <li><a href="<?= base_url() ?>">Home</a></li>
                 <li><a href="produk/produkbaru">New Arrivals</a></li>
-                <li><a href="produk/wanita">Ladies</a></li>
-                <li><a href="produk/pria">Men</a></li>
-                <li><a href="produk/anak">Kids</a></li>
+                <li><a href="<?= base_url('produk/wanita') ?>">Ladies</a></li>
+                <li><a href="<?= base_url('produk/pria') ?>">Men</a></li>
+                <li><a href="<?= base_url('produk/kids') ?>">Kids</a></li>
             </ul>
         </nav>
     </div>
