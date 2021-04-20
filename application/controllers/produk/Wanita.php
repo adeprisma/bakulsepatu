@@ -12,6 +12,11 @@ class Wanita extends MY_Controller
 
 	public function index()
 	{
+		
+	}
+
+	public function wanita()
+	{
 		$url = base_url();
 		$data['produk'] = $this->MWanita->count();
 		$data['wanita'] = $this->MWanita->getWanita();

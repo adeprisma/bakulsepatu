@@ -38,7 +38,7 @@ class Admin_Controller extends CI_Controller {
     public function layout($viewname, $data)
     {
         $this->isLoggedIn();
-        $this->load->view('admin/layout/header', FALSE);
+        $this->load->view('admin/layout/header');
         $this->load->view($viewname, $data, FALSE);
         $this->load->view('admin/layout/footer');
        
