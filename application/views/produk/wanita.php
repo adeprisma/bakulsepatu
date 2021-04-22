@@ -5,12 +5,12 @@
 	<div class="wrapper_top_shop">
 		<div class="clearfix"></div>
 		<div class="product-sec1">
-		<?php foreach ($pria as $row) :?>
+		<?php foreach ($wanita as $row) :?>
 		<div class="col-md-3 product-men">
 			<div class="product-shoe-info shoe">
 				<div class="men-pro-item">
 					<div class="men-thumb-item">
-						<img src="<?= base_url('assets/img/sepatu/pria/'. $row['gambar1']) ?>" alt="">
+						<img src="<?= base_url('assets/img/sepatu/wanita/'. $row['gambar1']) ?>" alt="">
 						<div class="men-cart-pro">
 							<div class="inner-men-cart-pro">
 								<a href="https://bakulsepatu.com/produk/detail/" class="link-product-add-cart">Detail</a>
@@ -56,12 +56,12 @@
 		<div class="col-lg-12">
 			<ul class="pagination">
 				<ul class="setPaginate"> 
-					<li><a>1</a></li>
-					<li><a class="current_page" href="http://bakulsepatu.com/produk/pria/page/2">2</a></li>
-					<li><a class="current_page" href="http://bakulsepatu.com/produk/pria/page/3">3</a></li>
-					<li><a class="current_page" href="http://bakulsepatu.com/produk/pria/page/4">4</a></li>
-					<li><a class="current_page" href="http://bakulsepatu.com/produk/pria/page/5">5</a></li>
-					<li><a class="current_page" href="http://bakulsepatu.com/produk/pria/page/2">Next</a> </li></ul>
+				<li><a>1</a></li>
+				<li><a class="current_page" href="http://bakulsepatu.com/produk/wanita/page/2">2</a></li>
+				<li><a class="current_page" href="http://bakulsepatu.com/produk/wanita/page/3">3</a></li>
+				<li><a class="current_page" href="http://bakulsepatu.com/produk/wanita/page/4">4</a></li>
+				<li><a class="current_page" href="http://bakulsepatu.com/produk/wanita/page/5">5</a></li>
+				<li><a class="current_page" href="http://bakulsepatu.com/produk/wanita/page/2">Next</a> </li></ul>
 			</ul>
 		</div>
 		</div>
