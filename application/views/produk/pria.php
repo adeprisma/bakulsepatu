@@ -55,7 +55,13 @@
 		<div class="clearfix"></div>
 		<div class="col-lg-12">
 			<ul class="pagination">
-				<ul class="setPaginate"> <li><a>1</a></li><li><a class="current_page" href="https://trekkersshoes.com/produk/wanita/page/2">2</a></li><li><a class="current_page" href="https://trekkersshoes.com/produk/wanita/page/3">3</a></li><li><a class="current_page" href="https://trekkersshoes.com/produk/wanita/page/4">4</a></li><li><a class="current_page" href="https://trekkersshoes.com/produk/wanita/page/5">5</a></li><li><a class="current_page" href="https://trekkersshoes.com/produk/wanita/page/2">Next</a> </li></ul>
+				<ul class="setPaginate"> 
+					<li><a>1</a></li>
+					<li><a class="current_page" href="http://bakulsepatu.com/produk/pria/page/2">2</a></li>
+					<li><a class="current_page" href="http://bakulsepatu.com/produk/pria/page/3">3</a></li>
+					<li><a class="current_page" href="http://bakulsepatu.com/produk/pria/page/4">4</a></li>
+					<li><a class="current_page" href="http://bakulsepatu.com/produk/pria/page/5">5</a></li>
+					<li><a class="current_page" href="http://bakulsepatu.com/produk/pria/page/2">Next</a> </li></ul>
 			</ul>
 		</div>
 		</div>

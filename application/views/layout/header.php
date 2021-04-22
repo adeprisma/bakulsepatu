@@ -2,7 +2,7 @@
 
 <head>
     <title>Bakul Sepatu</title>
-    <link rel="shortcut icon" type="image/x-icon" href="https://trekkersshoes.com/assets/img/favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- custom-theme -->
    

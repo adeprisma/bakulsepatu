@@ -169,11 +169,11 @@
                     colorByPoint: true,
                     data: [
 <?php foreach ($byReferral as $referrer) { ?>
-                        {
+                        
                         name: '<?= $referrer['referrer'] ?>',
                                 y: <?= $referrer['num'] ?>,
                                 drilldown: '<?= $referrer['referrer'] ?>'
-                        },
+                        
 <?php } ?>
                     ]
             }]
@@ -217,10 +217,10 @@
             },
             series: [
 <?php foreach ($ordersByMonth['years'] as $year) { ?>
-                {
+              
                 name: '<?= $year ?>',
                         data: [<?= implode(',', $ordersByMonth['orders'][$year]) ?>]
-                },
+                
 <?php } ?>
             ]
     });
