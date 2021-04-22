@@ -3,7 +3,7 @@
     	<ul class="short">
     		<li><a href="../index">Home</a><i>|</i></li>
     		<li><a href="produk">Produk</a><i>|</i></li>
-    		<li>Wanita</li>
+    		<li><?= $kategori ?></li>
     	</ul>
     </div>
 </div>

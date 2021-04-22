@@ -55,7 +55,7 @@
                     <h3>Kids</h3>
                     <p>Jelajahi berbagai macam sepatu anak mulai dari sneakers lampu dan sandal gunung</p>
                     <div class="shop-button two">
-                        <a href="produk/produkanak.html">Lihat Disini</a>
+                        <a href="<?= base_url('produk/kids'); ?>">Lihat Disini</a>
                     </div>
                 </div>
             </div>

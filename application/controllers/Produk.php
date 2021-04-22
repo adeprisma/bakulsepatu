@@ -7,7 +7,7 @@ class Produk extends MY_Controller
 	public function __construct()
     {
         parent::__construct();
-		$this->load->model(['MWanita']);
+		$this->load->model(['MProduk']);
     }
 
 	public function index()
@@ -18,46 +18,52 @@ class Produk extends MY_Controller
 	public function wanita()
 	{
 		$url = base_url();
-		$data['produk'] = $this->MWanita->count();
-		$data['wanita'] = $this->MWanita->getWanita();
+		$img = base_url('assets/img/logo-bakulsepatu.png');
+		$data['kategori'] = 'wanita';
+		$data['countProduk'] = $this->MProduk->count(1);
+		$data['katalog'] = $this->MProduk->getProduk(1);
 		$data['logo'] = '<div class="logo">
 							<h1>
 								<a href='.$url.'>
-									<img class="navbar-brand-produk" src="https://trekkersshoes.com/assets/img/logo.png">
+									<img class="navbar-brand-produk" src='.$img.'>
 								</a>
 							</h1>
 						</div>';
-		$this->layout('produk', 'produk/wanita', $data);
+		$this->layout('produk', 'produk', $data);
 	}
 
     public function pria()
 	{
 		$url = base_url();
-		$data['produk'] = $this->MWanita->count();
-		$data['wanita'] = $this->MWanita->getWanita();
+		$img = base_url('assets/img/logo-bakulsepatu.png');
+		$data['kategori'] = 'pria';
+		$data['countProduk'] = $this->MProduk->count(2);
+		$data['katalog'] = $this->MProduk->getProduk(2);
 		$data['logo'] = '<div class="logo">
 							<h1>
 								<a href='.$url.'>
-									<img class="navbar-brand-produk" src="https://trekkersshoes.com/assets/img/logo.png">
+									<img class="navbar-brand-produk" src='.$img.'>
 								</a>
 							</h1>
 						</div>';
-		$this->layout('produk', 'produk/wanita', $data);
+		$this->layout('produk', 'produk', $data);
 	}
 
     public function kids()
 	{
 		$url = base_url();
-		$data['produk'] = $this->MWanita->count();
-		$data['wanita'] = $this->MWanita->getWanita();
+		$img = base_url('assets/img/logo-bakulsepatu.png');
+		$data['kategori'] = 'kids';
+		$data['countProduk'] = $this->MProduk->count(0);
+		$data['katalog'] = $this->MProduk->getProduk(0);
 		$data['logo'] = '<div class="logo">
 							<h1>
 								<a href='.$url.'>
-									<img class="navbar-brand-produk" src="https://trekkersshoes.com/assets/img/logo.png">
+									<img class="navbar-brand-produk" src='.$img.'>
 								</a>
 							</h1>
 						</div>';
-		$this->layout('produk', 'produk/wanita', $data);
+		$this->layout('produk', 'produk', $data);
 	}
 
 }
