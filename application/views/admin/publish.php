@@ -4,6 +4,7 @@
             width: auto;
             border: 1px solid lightgrey;
             padding: 10px;
+            margin-bottom: 10px
         }
 </style>
 <script src="<?= base_url('assets/admin/ckeditor/ckeditor.js') ?>"></script>
@@ -78,8 +79,8 @@ if ($this->session->flashdata('result_publish')) {
         <label>Old Price</label>
         <input type="text" name="old_price[]" placeholder="without currency at the end" value="" class="form-control">
     </div> -->
-    <div class="box">
-        <label>Unggah Gambar</label>
+    <div class="box" id="box">
+        <!-- <label>Unggah Gambar</label> -->
         <div class="form-group for-shop">
             <label>Kategori Warna</label>
             <select class="selectpicker form-control show-tick show-menu-arrow" name="shop_categorie">
@@ -96,59 +97,51 @@ if ($this->session->flashdata('result_publish')) {
                 <?php } ?>
             </select>
         </div>
-        <div class="form-group"> 
+        <div class="form-group for-shop"> 
             <label>Nama Warna</label>
             <input type="text" name="title[]" value="" class="form-control">
         </div>
         <div class="form-group">
-            <div class="col-md-3">
+            <label class="col-md-2" style="padding-top: 8px">Tampak Kanan</label>
+            <div class="col-md-4">
                 <input type="file" name="gambar" id="gambar1" class="form-control custom-file-input" onchange="preview()">
                 <small class="form-text text-danger"><?= form_error('gambar'); ?></small>
             </div>
-            <div class="col-md-2">
-                <img src="<?= base_url('assets/img/admin/no-image.png') ?>" class="img-thumbnail img-preview" style="width: 300px; height:auto">
-            </div>
+            <img src="<?= base_url('assets/img/admin/no-image.png') ?>" class="img-thumbnail img-preview" style="width: 100px; height:auto">
         </div>
-        <div class="form-group">
-            <div class="col-md-3">
+        <div class="form-group for-shop">
+            <label class="col-md-2 control-label">Tampak Kiri</label>
+            <div class="col-md-4">
                 <input type="file" name="gambar" id="gambar1" class="form-control custom-file-input" onchange="preview()">
                 <small class="form-text text-danger"><?= form_error('gambar'); ?></small>
             </div>
-            <div class="col-md-2">
-                <img src="<?= base_url('assets/img/admin/no-image.png') ?>" class="img-thumbnail img-preview" style="width: 300px; height:auto">
-            </div>
+            <img src="<?= base_url('assets/img/admin/no-image.png') ?>" class="img-thumbnail img-preview" style="width: 100px; height:auto">
         </div>
-        <div class="form-group">
-            <div class="col-md-3">
+        <div class="form-group for-shop">
+            <label class="col-md-2 control-label">Tampak Depan</label>
+            <div class="col-md-4">
                 <input type="file" name="gambar" id="gambar1" class="form-control custom-file-input" onchange="preview()">
                 <small class="form-text text-danger"><?= form_error('gambar'); ?></small>
             </div>
-            <div class="col-md-2">
-                <img src="<?= base_url('assets/img/admin/no-image.png') ?>" class="img-thumbnail img-preview" style="width: 300px; height:auto">
-            </div>
+            <img src="<?= base_url('assets/img/admin/no-image.png') ?>" class="img-thumbnail img-preview" style="width: 100px; height:auto">
         </div>
-        <div class="form-group">
-            <div class="col-md-3">
+        <div class="form-group for-shop">
+            <label class="col-md-2 control-label">Tampak Belakang</label>
+            <div class="col-md-4">
                 <input type="file" name="gambar" id="gambar1" class="form-control custom-file-input" onchange="preview()">
                 <small class="form-text text-danger"><?= form_error('gambar'); ?></small>
             </div>
-            <div class="col-md-2">
-                <img src="<?= base_url('assets/img/admin/no-image.png') ?>" class="img-thumbnail img-preview" style="width: 300px; height:auto">
-            </div>
+            <img src="<?= base_url('assets/img/admin/no-image.png') ?>" class="img-thumbnail img-preview" style="width: 100px; height:auto">
         </div>
     </div>
-    <div class="form-group for-shop">
-        <label>Position</label>
-        <input type="text" placeholder="Position number" name="position" value="<?= isset($_POST['position']) ? htmlspecialchars($_POST['position']) : '' ?>" class="form-control">
-    </div>
-    <div class="form-group">
+    <!-- <div class="form-group">
         <label for="description">Description</label>
         <textarea name="description" id="description" rows="50" class="form-control"></textarea>
         <script>
             CKEDITOR.replace('description');
             CKEDITOR.config.entities = false;
         </script>
-    </div>
+    </div> -->
     <button type="submit" name="submit" class="btn btn-lg btn-default btn-publish">Publish</button>
     <?php if ($this->uri->segment(3) !== null) { ?>
         <a href="<?= base_url('admin/products') ?>" class="btn btn-lg btn-default">Cancel</a>

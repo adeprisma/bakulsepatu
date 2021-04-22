@@ -27,7 +27,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="<?= base_url('admin/emails') ?>">
+                <a href="#">
                     <div class="panel-footer">
                         <span class="pull-left">View Details</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -49,7 +49,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="<?= base_url('admin/orders') ?>">
+                <a href="#">
                     <div class="panel-footer">
                         <span class="pull-left">View Details</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -71,7 +71,7 @@
                         </div>
                     </div>
                 </div>
-                <a href="<?= base_url('admin/products?orderby=quantity=asc') ?>">
+                <a href="#">
                     <div class="panel-footer">
                         <span class="pull-left">View Details</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -117,7 +117,7 @@
                         </table>
                     </div>
                     <div class="text-right">
-                        <a href="<?= base_url('admin/history') ?>">View All Activity <i class="fa fa-arrow-circle-right"></i></a>
+                        <a href="#">View All Activity <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
             </div>
