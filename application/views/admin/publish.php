@@ -134,7 +134,6 @@ if ($this->session->flashdata('result_publish')) {
             <img src="<?= base_url('assets/img/admin/no-image.png') ?>" class="img-thumbnail img-preview" style="width: 100px; height:auto">
         </div>
     </div>
-<<<<<<< HEAD
     <!-- <div class="form-group">
         <label for="description">Description</label>
         <textarea name="description" id="description" rows="50" class="form-control"></textarea>
@@ -143,10 +142,6 @@ if ($this->session->flashdata('result_publish')) {
             CKEDITOR.config.entities = false;
         </script>
     </div> -->
-=======
-    
-  
->>>>>>> 4520414ae865c03485763d1b50a7387d11d960ed
     <button type="submit" name="submit" class="btn btn-lg btn-default btn-publish">Publish</button>
     <?php if ($this->uri->segment(3) !== null) { ?>
         <a href="<?= base_url('admin/products') ?>" class="btn btn-lg btn-default">Cancel</a>
