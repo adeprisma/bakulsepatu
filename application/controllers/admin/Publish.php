@@ -7,11 +7,15 @@ class Publish extends Admin_Controller
 	public function __construct()
     {
         parent::__construct();
+        $this->load->model(['MProduk']);
     }
 
 	public function index()
 	{
-		$this->layout('admin/publish', null);
+        $data['kategori'] = $this->MProduk->getKategori();
+        $data['model'] = $this->MProduk->getmodel();
+        $data['kategori_warna'] = $this->MProduk->getkategori_warna();
+		$this->layout('admin/publish', $data);
 	}
 
 	public function signout()

@@ -629,4 +629,57 @@ a.orders-referral {
   .sidebar-menu {
     display: none;
   }
+  .dot_black {
+    background-color: #000000;
+    display: inline-block;
+  }
+  .dot_white {
+    height: 16px;
+    width: 16px;
+    background-color: #f3f0f0;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .dot_merah {
+    height: 16px;
+    width: 16px;
+    background-color: #f30909;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .dot_biru {
+    height: 16px;
+    width: 16px;
+    background-color: #0a07e6;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .dot_abu_tua {
+    height: 16px;
+    width: 16px;
+    background-color: #828080;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .dot_pirus {
+    height: 16px;
+    width: 16px;
+    background-color: #0af7ec;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .dot_hijau {
+    height: 16px;
+    width: 16px;
+    background-color: #12ec16;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .dot_kuning {
+    height: 16px;
+    width: 16px;
+    background-color: #f3e10e;
+    border-radius: 50%;
+    display: inline-block;
+  }
 }

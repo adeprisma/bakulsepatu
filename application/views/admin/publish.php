@@ -4,7 +4,24 @@
             width: auto;
             border: 1px solid lightgrey;
             padding: 10px;
-            margin-bottom: 10px
+            margin-bottom: 10px;
+        }
+        .dot_black {
+            background-color: #000000;
+            
+            width: 100%;
+        }
+        .center{
+            background-color: #828080;
+            border-radius: 10px 10px 0 0;
+            padding: 5px;
+            color: white;
+            text-align: center;
+        }
+
+        #addForm:hover{
+            background: #75a4fa;
+            border-color: #75a4fa
         }
 </style>
 <script src="<?= base_url('assets/admin/ckeditor/ckeditor.js') ?>"></script>
@@ -30,159 +47,194 @@ if ($this->session->flashdata('result_publish')) {
 <form method="POST" action="" enctype="multipart/form-data">
     <div class="form-group"> 
         <label>Nama Sepatu</label>
-        <input type="text" name="title[]" value="" class="form-control">
+        <input type="text" name="nama_sepatu" value="" class="form-control" required>
     </div>
     <div class="form-group for-shop">
         <label>Kategori</label>
-        <select class="selectpicker form-control show-tick show-menu-arrow" name="shop_categorie">
-            <?php foreach ($shop_categories as $key_cat => $shop_categorie) { ?>
-                <option <?= isset($_POST['shop_categorie']) && $_POST['shop_categorie'] == $key_cat ? 'selected=""' : '' ?> value="<?= $key_cat ?>">
-                    <?php
-                    foreach ($shop_categorie['info'] as $nameAbbr) {
-                        if ($nameAbbr['abbr'] == $this->config->item('language_abbr')) {
-                            echo $nameAbbr['name'];
-                        }
-                    }
-                    ?>
-                </option>
+        <select class="selectpicker form-control" name="kategori" required>
+        <option disabled="disabled" selected="selected" value="00">-- PILIH KATEGORI --</option>
+            <?php foreach ($kategori as $row) { ?>
+                <option value="<?= $row->kode_kategori ?>"><?= ucfirst($row->nama_kategori) ?></option>
             <?php } ?>
         </select>
     </div>
     <div class="form-group for-shop">
         <label>Model</label>
-        <select class="selectpicker form-control show-tick show-menu-arrow" name="shop_categorie">
-            <?php foreach ($shop_categories as $key_cat => $shop_categorie) { ?>
-                <option <?= isset($_POST['shop_categorie']) && $_POST['shop_categorie'] == $key_cat ? 'selected=""' : '' ?> value="<?= $key_cat ?>">
-                    <?php
-                    foreach ($shop_categorie['info'] as $nameAbbr) {
-                        if ($nameAbbr['abbr'] == $this->config->item('language_abbr')) {
-                            echo $nameAbbr['name'];
-                        }
-                    }
-                    ?>
-                </option>
+        <select class="selectpicker form-control" name="model" required>
+        <option disabled="disabled" selected="selected" value="00">-- PILIH MODEL --</option>
+            <?php foreach ($model as $row) { ?>
+                <option value="<?= $row->kode_model ?>"><?= $row->nama_model ?></option>
             <?php } ?>
         </select>
     </div>
     <div class="form-group for-shop">
         <label>Status Barang</label>
-        <select class="selectpicker" name="in_slider">
+        <select class="selectpicker" name="status" required>
             <option value="1" <?= isset($_POST['in_slider']) && $_POST['in_slider'] == 1 ? 'selected' : '' ?>>Produk Baru</option>
             <option value="0" <?= isset($_POST['in_slider']) && $_POST['in_slider'] == 0 || !isset($_POST['in_slider']) ? 'selected' : '' ?>>Produk Lama</option>
         </select>
     </div>
-    <!-- <div class="form-group for-shop">
-        <label>Price</label>
-        <input type="text" name="price[]" placeholder="without currency at the end" value="" class="form-control">
-    </div>
-    <div class="form-group for-shop">
-        <label>Old Price</label>
-        <input type="text" name="old_price[]" placeholder="without currency at the end" value="" class="form-control">
-    </div> -->
+    
+    <div class="center"><h4>Unggah Gambar</h4></div>
     <div class="box" id="box">
-        <!-- <label>Unggah Gambar</label> -->
+        <div class="form form-horizontal">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label class="col-md-4 control-label">Tampak Kanan</label>
+                    <div class="col-md-4">
+                        <input type="file" name="tampak_kanan[]" id="tampak_kanan[]" class="form-control custom-file-input" onchange="preview()" required>
+                        <small class="form-text text-danger"><?= form_error('gambar'); ?></small>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="<?= base_url('assets/img/admin/no-image.png') ?>" class="img-thumbnail img-preview" style="width: 100px; height:auto">
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="col-md-4 control-label">Tampak Kiri</label>
+                    <div class="col-md-4">
+                        <input type="file" name="gambar" id="gambar1" class="form-control custom-file-input" onchange="preview()" required>
+                        <small class="form-text text-danger"><?= form_error('gambar'); ?></small>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="<?= base_url('assets/img/admin/no-image.png') ?>" class="img-thumbnail img-preview" style="width: 100px; height:auto">
+                    </div>
+                </div>
+                
+                
+                <div class="form-group col-md-6">
+                    <label class="col-md-4 control-label">Tampak Depan</label>
+                    <div class="col-md-4">
+                        <input type="file" name="gambar" id="gambar1" class="form-control custom-file-input" onchange="preview()" required>
+                        <small class="form-text text-danger"><?= form_error('gambar'); ?></small>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="<?= base_url('assets/img/admin/no-image.png') ?>" class="img-thumbnail img-preview" style="width: 100px; height:auto">
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="col-md-4 control-label">Tampak Belakang</label>
+                    <div class="col-md-4">
+                        <input type="file" name="gambar" id="gambar1" class="form-control custom-file-input" onchange="preview()" required>
+                        <small class="form-text text-danger"><?= form_error('gambar'); ?></small>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="<?= base_url('assets/img/admin/no-image.png') ?>" class="img-thumbnail img-preview" style="width: 100px; height:auto">
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="form-group for-shop">
             <label>Kategori Warna</label>
-            <select class="selectpicker form-control show-tick show-menu-arrow" name="shop_categorie">
-                <?php foreach ($shop_categories as $key_cat => $shop_categorie) { ?>
-                    <option <?= isset($_POST['shop_categorie']) && $_POST['shop_categorie'] == $key_cat ? 'selected=""' : '' ?> value="<?= $key_cat ?>">
-                        <?php
-                        foreach ($shop_categorie['info'] as $nameAbbr) {
-                            if ($nameAbbr['abbr'] == $this->config->item('language_abbr')) {
-                                echo $nameAbbr['name'];
-                            }
-                        }
-                        ?>
-                    </option>
+            <select class="selectpicker form-control" name="kategori_warna[]" required>
+            <option disabled="disabled" selected="selected" value="00">-- PILIH WARNA --</option>
+                <?php foreach ($kategori_warna as $row) { ?>
+                    <option <?= isset($_POST['kategori_warna[]']) && $_POST['kategori_warna[]'] == $row ? 'selected=""' : '' ?> value="<?= $row->kode_warna ?>"><?= ucfirst($row->kategori) ?></option>
                 <?php } ?>
             </select>
         </div>
         <div class="form-group for-shop"> 
             <label>Nama Warna</label>
-            <input type="text" name="title[]" value="" class="form-control">
-        </div>
-        <div class="form-group">
-            <label class="col-md-2" style="padding-top: 8px">Tampak Kanan</label>
-            <div class="col-md-4">
-                <input type="file" name="gambar" id="gambar1" class="form-control custom-file-input" onchange="preview()">
-                <small class="form-text text-danger"><?= form_error('gambar'); ?></small>
-            </div>
-            <img src="<?= base_url('assets/img/admin/no-image.png') ?>" class="img-thumbnail img-preview" style="width: 100px; height:auto">
-        </div>
-        <div class="form-group for-shop">
-            <label class="col-md-2 control-label">Tampak Kiri</label>
-            <div class="col-md-4">
-                <input type="file" name="gambar" id="gambar1" class="form-control custom-file-input" onchange="preview()">
-                <small class="form-text text-danger"><?= form_error('gambar'); ?></small>
-            </div>
-            <img src="<?= base_url('assets/img/admin/no-image.png') ?>" class="img-thumbnail img-preview" style="width: 100px; height:auto">
-        </div>
-        <div class="form-group for-shop">
-            <label class="col-md-2 control-label">Tampak Depan</label>
-            <div class="col-md-4">
-                <input type="file" name="gambar" id="gambar1" class="form-control custom-file-input" onchange="preview()">
-                <small class="form-text text-danger"><?= form_error('gambar'); ?></small>
-            </div>
-            <img src="<?= base_url('assets/img/admin/no-image.png') ?>" class="img-thumbnail img-preview" style="width: 100px; height:auto">
-        </div>
-        <div class="form-group for-shop">
-            <label class="col-md-2 control-label">Tampak Belakang</label>
-            <div class="col-md-4">
-                <input type="file" name="gambar" id="gambar1" class="form-control custom-file-input" onchange="preview()">
-                <small class="form-text text-danger"><?= form_error('gambar'); ?></small>
-            </div>
-            <img src="<?= base_url('assets/img/admin/no-image.png') ?>" class="img-thumbnail img-preview" style="width: 100px; height:auto">
+            <input type="text" name="nama_warna[]" value="" class="form-control" required>
         </div>
     </div>
-    <!-- <div class="form-group">
-        <label for="description">Description</label>
-        <textarea name="description" id="description" rows="50" class="form-control"></textarea>
-        <script>
-            CKEDITOR.replace('description');
-            CKEDITOR.config.entities = false;
-        </script>
-    </div> -->
-    <button type="submit" name="submit" class="btn btn-lg btn-default btn-publish">Publish</button>
+    <button type="button" style="margin-bottom: 10px" class="btn btn-success" id="addForm">Tambah gambar dengan warna lain</button>
+    <button type="button" style="margin-bottom: 10px; display: none" class="btn btn-danger" id="resetForm">Reset</button>
+    <div id="show-form">
+    <!-- Form upload gambar dengan warna lain -->
+    </div>
+    <button type="submit" name="submit" class="btn btn-lg btn-default" style="margin-top: 10px">Publish</button>
     <?php if ($this->uri->segment(3) !== null) { ?>
         <a href="<?= base_url('admin/products') ?>" class="btn btn-lg btn-default">Cancel</a>
     <?php } ?>
 </form>
-<!-- Modal Upload More Images -->
-<div class="modal fade" id="modalMoreImages" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Upload more images</h4>
-            </div>
-            <div class="modal-body">
-                <form id="uploadImagesForm">
-                    <input type="hidden" value="<?= isset($_POST['folder']) ? htmlspecialchars($_POST['folder']) : $timeNow ?>" name="folder">
-                    <label for="others">Select images</label>
-                    <input type="file" name="others[]" id="others" multiple />
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default finish-upload">
-                    <span class="finish-text">Finish</span>
-                    <img src="<?= base_url('assets/imgs/load.gif') ?>" class="loadUploadOthers" alt="">
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- virtualProductsHelp -->
-<div class="modal fade" id="virtualProductsHelp" tabindex="-1" role="dialog" aria-labelledby="virtualProductsHelp">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                
-            </div>
-           
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
+        <?php
+        $age = array("Peter"=>35, "Ben"=>37, "Joe"=>43);
+        ?>
+
+<!-- Javascript Upload Images From Other Color -->
+<script>
+
+// var select = document.getElementById('kategori_warna');
+
+// var options = <?php echo json_encode($age); ?>;
+//     for(var i = 0; i < options.length; i++) {
+//         var opt = options[i];
+//         select.innerHTML += "<option value=\"" + opt + "\">" + opt + "</option>";
+//     }
+
+$(document).ready(function(){
+  $("#addForm").click(function(){
+      $('#resetForm').show();
+
+    var x = '<div class="center"><h4>Unggah Gambar</h4></div>'+
+            '<div class="box" id="box">'+
+                '<div class="form form-horizontal">'+
+                    '<div class="form-row">'+
+                        '<div class="form-group col-md-6">'+
+                            '<label class="col-md-4 control-label">Tampak Kanan</label>'+
+                            '<div class="col-md-4">'+
+                                '<input type="file" name="tampak_kanan[]" id="tampak_kanan[]" class="form-control custom-file-input" onchange="preview()" required>'+
+                                '<small class="form-text text-danger"><?= form_error('gambar'); ?></small>'+
+                            '</div>'+
+                            '<div class="col-md-4">'+
+                                '<img src="<?= base_url('assets/img/admin/no-image.png') ?>" class="img-thumbnail img-preview" style="width: 100px; height:auto">'+
+                            '</div>'+
+                        '</div>'+
+                        '<div class="form-group col-md-6">'+
+                            '<label class="col-md-4 control-label">Tampak Kiri</label>'+
+                            '<div class="col-md-4">'+
+                                '<input type="file" name="gambar" id="gambar1" class="form-control custom-file-input" onchange="preview()" required>'+
+                                '<small class="form-text text-danger"><?= form_error('gambar'); ?></small>'+
+                            '</div>'+
+                            '<div class="col-md-4">'+
+                                '<img src="<?= base_url('assets/img/admin/no-image.png') ?>" class="img-thumbnail img-preview" style="width: 100px; height:auto">'+
+                            '</div>'+
+                        '</div>'+
+                        '<div class="form-group col-md-6">'+
+                            '<label class="col-md-4 control-label">Tampak Depan</label>'+
+                            '<div class="col-md-4">'+
+                                '<input type="file" name="gambar" id="gambar1" class="form-control custom-file-input" onchange="preview()" required>'+
+                                '<small class="form-text text-danger"><?= form_error('gambar'); ?></small>'+
+                            '</div>'+
+                            '<div class="col-md-4">'+
+                                '<img src="<?= base_url('assets/img/admin/no-image.png') ?>" class="img-thumbnail img-preview" style="width: 100px; height:auto">'+
+                            '</div>'+
+                        '</div>'+
+                        '<div class="form-group col-md-6">'+
+                            '<label class="col-md-4 control-label">Tampak Belakang</label>'+
+                            '<div class="col-md-4">'+
+                                '<input type="file" name="gambar" id="gambar1" class="form-control custom-file-input" onchange="preview()" required>'+
+                                '<small class="form-text text-danger"><?= form_error('gambar'); ?></small>'+
+                            '</div>'+
+                            '<div class="col-md-4">'+
+                                '<img src="<?= base_url('assets/img/admin/no-image.png') ?>" class="img-thumbnail img-preview" style="width: 100px; height:auto">'+
+                            '</div>'+
+                        '</div>'+
+                    '</div>'+
+                '</div>'+
+                '<div class="form-group for-shop">'+
+                    '<label>Kategori Warna</label>'+
+                    '<select class="form-control" name="kategori_warna[]" required>'+
+                        '<option disabled="disabled" selected="selected" value="00">-- PILIH WARNA --</option>'+
+                        '<?php foreach ($kategori_warna as $row) { ?>'+
+                            '<option <?= isset($_POST['kategori_warna[]']) && $_POST['kategori_warna[]'] == $row ? 'selected=""' : '' ?> value="<?= $row->kode_warna ?>"><?= ucfirst($row->kategori) ?></option>'+
+                        '<?php } ?>'+
+                    '</select>'+
+                '</div>'+
+                '<div class="form-group for-shop">'+
+                    '<label>Nama Warna</label>'+
+                    '<input type="text" name="nama_warna[]" value="" class="form-control" required>'+
+                '</div>'+
+            '</div>';
+
+    $("#show-form").append(x);
+  });
+
+  $("#resetForm").click(function(){
+		$("#show-form").html(""); // Kita kosongkan isi dari div insert-form
+        document.getElementById("resetForm").style.display = "none";
+    });
+});
+
+</script>
+<!-- End Javascript Upload Images From Other Color -->

@@ -25,4 +25,19 @@ class MProduk extends CI_Model
       return $this->db->get('sepatu')->result_array();
   }
 
+  public function getKategori()
+  {
+    return $this->db->get('kategori')->result();
+  }
+
+  public function getmodel()
+  {
+    return $this->db->get('model')->result();
+  }
+
+  public function getkategori_warna()
+  {
+    return $this->db->get('warna')->result();
+  }
+
 }
