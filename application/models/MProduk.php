@@ -25,4 +25,139 @@ class MProduk extends CI_Model
       return $this->db->get('sepatu')->result_array();
   }
 
+  public function getKategori()
+  {
+    return $this->db->get('kategori')->result();
+  }
+
+  public function getModel()
+  {
+    return $this->db->get('model')->result();
+  }
+
+  public function getkategori_warna()
+  {
+    return $this->db->get('warna')->result();
+  }
+
+  public function addSepatu()
+  {
+    $kategori = $this->input->post('kategori');
+    $nama_sepatu = $this->input->post('nama_sepatu');
+    
+    $this->db->join('kategori', 'kategori.kode_kategori = sepatu.kode_kategori');
+    $this->db->where('sepatu.kode_kategori', $kategori);
+    $this->db->limit(1);
+    $this->db->order_by('id_sepatu', 'desc');
+    $query = $this->db->get('sepatu')->row();
+    
+    if ($query != null )
+    {
+      $id = $query->id_sepatu + 1;
+      $group = $query->nama_kategori;
+    }
+    else
+    {
+      if ($kategori == 0)
+      {
+        $id = 4401;
+        $group = 'kids';
+      }
+      if ($kategori == 1)
+      {
+        $id = 5501;
+        $group = 'wanita';
+      }
+      if ($kategori == 2)
+      {
+        $id =6601;
+        $group = 'pria';
+      }
+    }
+    
+    $data = [
+      "id_sepatu" => $id,
+      "nama_sepatu" => $this->input->post('nama_sepatu'),
+      "kode_kategori" => $kategori,
+      "kode_model" => $this->input->post('model'),
+      "status" => $this->input->post('status')
+    ];
+    $this->db->insert('sepatu', $data);
+
+    //Upload Gambar
+    if(is_dir("assets/img/sepatu/$group/$id - $nama_sepatu") == false)
+    {
+      mkdir("assets/img/sepatu/$group/$id - $nama_sepatu");
+    }
+    $config['upload_path']          = 'assets/img/sepatu/'.$group.'/'.$id.' - '.$nama_sepatu.'/';
+		$config['allowed_types']        = '*';
+		$config['encrypt_name']        = TRUE;
+		$this->load->library('upload', $config);
+    $jumlah = count($_FILES['tampak_kanan']['name']);
+    $kode_warna = $this->input->post('kategori_warna');
+    $nama_warna = $this->input->post('nama_warna');
+
+    for ($i = 0; $i < $jumlah; $i++)
+    {
+      if (!empty($_FILES['tampak_kanan']['name'][$i]))
+      {
+        $_FILES['file']['name'] = $_FILES['tampak_kanan']['name'][$i];
+				$_FILES['file']['tmp_name'] = $_FILES['tampak_kanan']['tmp_name'][$i];
+				$_FILES['file']['size'] = $_FILES['tampak_kanan']['size'][$i];
+				$this->upload->do_upload('file');
+				$gambarkanan[$i] = $this->upload->data('file_name');
+      }
+      else{$gambarkanan[$i] = null;}
+
+      if (!empty($_FILES['tampak_kiri']['name'][$i]))
+      {
+        $_FILES['file']['name'] = $_FILES['tampak_kiri']['name'][$i];
+				$_FILES['file']['tmp_name'] = $_FILES['tampak_kiri']['tmp_name'][$i];
+        $_FILES['file']['size'] = $_FILES['tampak_kiri']['size'][$i];
+				$this->upload->do_upload('file');
+				$gambarkiri[$i] = $this->upload->data('file_name');
+      }
+      else{$gambarkiri[$i] = null;}
+
+      if (!empty($_FILES['tampak_depan']['name'][$i]))
+      {
+        $_FILES['file']['name'] = $_FILES['tampak_depan']['name'][$i];
+				$_FILES['file']['tmp_name'] = $_FILES['tampak_depan']['tmp_name'][$i];
+        $_FILES['file']['size'] = $_FILES['tampak_depan']['size'][$i];
+				$this->upload->do_upload('file');
+				$gambardepan[$i] = $this->upload->data('file_name');
+      }
+      else{$gambardepan[$i] = null;}
+
+      if (!empty($_FILES['tampak_belakang']['name'][$i]))
+      {
+        $_FILES['file']['name'] = $_FILES['tampak_belakang']['name'][$i];
+				$_FILES['file']['tmp_name'] = $_FILES['tampak_belakang']['tmp_name'][$i];
+        $_FILES['file']['size'] = $_FILES['tampak_belakang']['size'][$i];
+				$this->upload->do_upload('file');
+				$gambarbelakang[$i] = $this->upload->data('file_name');
+      }
+      else{$gambarbelakang[$i] = null;}
+    }
+
+    $no = 0;
+    $urutan = 1;
+    foreach ($nama_warna as $row)
+    {
+      $dataBatch[] = [
+        "id_gambar" => $id.$urutan,
+        "id_sepatu" => $id,
+        "kode_warna" => $kode_warna[$no],
+        "nama_warna" => $row,
+        "gambar1" => $gambarkanan[$no],
+        "gambar2" => $gambarkiri[$no],
+        "gambar3" => $gambardepan[$no],
+        "gambar4" => $gambarbelakang[$no]
+      ];
+      $no++;
+      $urutan++;
+    }
+    $this->db->insert_batch('gambar', $dataBatch);
+  }
+
 }
