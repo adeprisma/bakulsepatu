@@ -34,7 +34,7 @@
             }
             ?>
         </div>
-        <div class="avatar"><img src="<?= base_url('assets/img/nigga-david.jpg')?>"></div>
+        <div class="avatar"><img src="<?= base_url('assets/img/admin/admin.png')?>"></div>
         <p class="text-center text-danger"><?= $this->session->flashdata('log_alert') ?></p>
         <p class="text-center text-danger"><?= $this->session->flashdata('success') ?></p>
         <div class="form-box">
