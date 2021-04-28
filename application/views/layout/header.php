@@ -2,7 +2,7 @@
 
 <head>
     <title>Bakul Sepatu</title>
-    <link rel="shortcut icon" type="image/x-icon" href="">
+    <link rel="shortcut icon" type="image/x-icon" href="<?= base_url('assets/img/favicon.ico') ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- custom-theme -->
    
