@@ -16,6 +16,13 @@ class MProduk extends CI_Model
       return $this->db->count_all_results();
   }
 
+  public function getSemuaProduk()
+  {
+      $this->db->join('gambar', 'gambar.id_sepatu = sepatu.id_sepatu');
+      $this->db->order_by('sepatu.status', 'desc');
+      return $this->db->get('sepatu')->result_array();
+  }
+
   public function getProduk($kode_kategori)
   {
       $this->db->select('sepatu.*, gambar.*');

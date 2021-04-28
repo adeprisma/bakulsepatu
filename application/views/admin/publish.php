@@ -69,7 +69,7 @@ if ($this->session->flashdata('result_publish')) {
     <div class="form-group for-shop">
         <label>Kategori</label>
         <select class="selectpicker form-control" name="kategori" required>
-        <option disabled="disabled" selected="selected" value="00">-- PILIH KATEGORI --</option>
+        <option disabled="disabled" selected="selected" value="">-- PILIH KATEGORI --</option>
             <?php foreach ($kategori as $row) { ?>
                 <option value="<?= $row->kode_kategori ?>"><?= ucfirst($row->nama_kategori) ?></option>
             <?php } ?>
@@ -78,7 +78,7 @@ if ($this->session->flashdata('result_publish')) {
     <div class="form-group for-shop">
         <label>Model</label>
         <select class="selectpicker form-control" name="model" required>
-        <option disabled="disabled" selected="selected" value="00">-- PILIH MODEL --</option>
+        <option disabled="disabled" selected="selected" value="">-- PILIH MODEL --</option>
             <?php foreach ($model as $row) { ?>
                 <option value="<?= $row->kode_model ?>"><?= $row->nama_model ?></option>
             <?php } ?>
@@ -141,7 +141,7 @@ if ($this->session->flashdata('result_publish')) {
         <div class="form-group for-shop">
             <label>Kategori Warna</label>
             <select class="selectpicker form-control" name="kategori_warna[]" required>
-            <option disabled="disabled" selected="selected" value="00">-- PILIH WARNA --</option>
+            <option disabled="disabled" selected="selected" value="">-- PILIH WARNA --</option>
                 <?php foreach ($kategori_warna as $row) { ?>
                     <option value="<?= $row->kode_warna ?>"><?= ucfirst($row->kategori) ?></option>
                 <?php } ?>
@@ -235,7 +235,7 @@ $(document).ready(function(){
                 '<div class="form-group for-shop">'+
                     '<label>Kategori Warna</label>'+
                     '<select class="form-control" name="kategori_warna[]" required>'+
-                        '<option disabled="disabled" selected="selected" value="00">-- PILIH WARNA --</option>'+
+                        '<option disabled="disabled" selected="selected" value="">-- PILIH WARNA --</option>'+
                         '<?php foreach ($kategori_warna as $row) { ?>'+
                             '<option value="<?= $row->kode_warna ?>"><?= ucfirst($row->kategori) ?></option>'+
                         '<?php } ?>'+
