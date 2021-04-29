@@ -55,7 +55,7 @@
 		</div>
 		<?php endforeach ?>												
 		<div class="clearfix"></div>
-		<div class="col-lg-12">
+		<div class="col-md-12 text-center">
 			<!-- <ul class="pagination">
 				<ul class="setPaginate"> <li><a>1</a></li><li><a class="current_page" href="https://trekkersshoes.com/produk/wanita/page/2">2</a></li><li><a class="current_page" href="https://trekkersshoes.com/produk/wanita/page/3">3</a></li><li><a class="current_page" href="https://trekkersshoes.com/produk/wanita/page/4">4</a></li><li><a class="current_page" href="https://trekkersshoes.com/produk/wanita/page/5">5</a></li><li><a class="current_page" href="https://trekkersshoes.com/produk/wanita/page/2">Next</a> </li></ul>
 			</ul> --> <?= $pagination ?>
