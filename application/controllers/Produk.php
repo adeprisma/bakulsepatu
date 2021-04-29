@@ -3,7 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Produk extends MY_Controller 
 {
-
+	private $per_page = 8;
+	
 	public function __construct()
     {
         parent::__construct();
@@ -17,11 +18,22 @@ class Produk extends MY_Controller
 
 	public function kids()
 	{
+		$data['countProduk'] = $this->MProduk->count(0);
+		$data['pagination'] = pagination('kids', $data['countProduk'], $this->per_page);
+		
+		if ($this->uri->segment(3) == null)
+		{
+			$start = 0;
+		}
+		else
+		{
+			$start = $this->uri->segment(3);
+		}
+
 		$url = base_url();
 		$img = base_url('assets/img/logo-bakulsepatu.png');
 		$data['kategori'] = 'kids';
-		$data['countProduk'] = $this->MProduk->count(0);
-		$data['katalog'] = $this->MProduk->getProduk(0);
+		$data['katalog'] = $this->MProduk->getProduk(0, $this->per_page, $start);
 		$data['logo'] = '<div class="logo">
 							<h1>
 								<a href='.$url.'>
@@ -34,11 +46,22 @@ class Produk extends MY_Controller
 
 	public function wanita()
 	{
+		$data['countProduk'] = $this->MProduk->count(1);
+		$data['pagination'] = pagination('wanita', $data['countProduk'], $this->per_page);
+		
+		if ($this->uri->segment(3) == null)
+		{
+			$start = 0;
+		}
+		else
+		{
+			$start = $this->uri->segment(3);
+		}
+
 		$url = base_url();
 		$img = base_url('assets/img/logo-bakulsepatu.png');
 		$data['kategori'] = 'wanita';
-		$data['countProduk'] = $this->MProduk->count(1);
-		$data['katalog'] = $this->MProduk->getProduk(1);
+		$data['katalog'] = $this->MProduk->getProduk(1, $this->per_page, $start);
 		$data['logo'] = '<div class="logo">
 							<h1>
 								<a href='.$url.'>
@@ -51,11 +74,22 @@ class Produk extends MY_Controller
 
     public function pria()
 	{
+		$data['countProduk'] = $this->MProduk->count(2);
+		$data['pagination'] = pagination('pria', $data['countProduk'], $this->per_page);
+
+		if ($this->uri->segment(3) == null)
+		{
+			$start = 0;
+		}
+		else
+		{
+			$start = $this->uri->segment(3);
+		}
+
 		$url = base_url();
 		$img = base_url('assets/img/logo-bakulsepatu.png');
 		$data['kategori'] = 'pria';
-		$data['countProduk'] = $this->MProduk->count(2);
-		$data['katalog'] = $this->MProduk->getProduk(2);
+		$data['katalog'] = $this->MProduk->getProduk(2, $this->per_page, $start);
 		$data['logo'] = '<div class="logo">
 							<h1>
 								<a href='.$url.'>
@@ -66,13 +100,24 @@ class Produk extends MY_Controller
 		$this->layout('produk', 'produk', $data);
 	}
 
-	public function allProduct()
+	public function allproduct()
 	{
+		$data['countProduk'] = $this->db->count_all('sepatu');
+		$data['pagination'] = pagination('allproduct', $data['countProduk'], $this->per_page);
+
+		if ($this->uri->segment(3) == null)
+		{
+			$start = 0;
+		}
+		else
+		{
+			$start = $this->uri->segment(3);
+		}
+
 		$url = base_url();
 		$img = base_url('assets/img/logo-bakulsepatu.png');
 		$data['kategori'] = 'semua produk';
-		$data['countProduk'] = $this->MProduk->count(2);
-		$data['katalog'] = $this->MProduk->getProduk(2);
+		$data['katalog'] = $this->MProduk->getSemuaProduk($this->per_page, $start);
 		$data['logo'] = '<div class="logo">
 							<h1>
 								<a href='.$url.'>
@@ -82,39 +127,5 @@ class Produk extends MY_Controller
 						</div>';
 		$this->layout('produk', 'produk', $data);
 	}
-
-	public function pagination()
-	{
-		$this->load->library('pagination');
-	
-		$config['base_url'] = 'url';
-		$config['total_rows'] = 100;
-		$config['per_page'] = 10;
-		$config['uri_segment'] = 3;
-		$config['num_links'] = 3;
-		$config['full_tag_open'] = '<p>';
-		$config['full_tag_close'] = '</p>';
-		$config['first_link'] = 'First';
-		$config['first_tag_open'] = '<div>';
-		$config['first_tag_close'] = '</div>';
-		$config['last_link'] = 'Last';
-		$config['last_tag_open'] = '<div>';
-		$config['last_tag_close'] = '</div>';
-		$config['next_link'] = '&gt;';
-		$config['next_tag_open'] = '<div>';
-		$config['next_tag_close'] = '</div>';
-		$config['prev_link'] = '&lt;';
-		$config['prev_tag_open'] = '<div>';
-		$config['prev_tag_close'] = '</div>';
-		$config['cur_tag_open'] = '<b>';
-		$config['cur_tag_close'] = '</b>';
 		
-		$this->pagination->initialize($config);
-		
-		echo $this->pagination->create_links();
-	}
-	
-	
-	
-
 }

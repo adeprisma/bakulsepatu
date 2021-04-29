@@ -16,20 +16,25 @@ class MProduk extends CI_Model
       return $this->db->count_all_results();
   }
 
-  public function getSemuaProduk()
+  public function getSemuaProduk($limit, $start)
   {
-      $this->db->join('gambar', 'gambar.id_sepatu = sepatu.id_sepatu');
-      $this->db->order_by('sepatu.status', 'desc');
-      return $this->db->get('sepatu')->result_array();
+    $sql = $this->db->query("SELECT * FROM sepatu JOIN gambar on gambar.id_sepatu = sepatu.id_sepatu\n"
+                              . "JOIN kategori on kategori.kode_kategori = sepatu.kode_kategori\n"
+                              . "GROUP BY gambar.id_sepatu\n"
+                              . "ORDER BY sepatu.nama_sepatu and sepatu.status\n"
+                              . "LIMIT $limit\n"
+                              . "OFFSET $start\n");
+    return $sql->result_array();
   }
 
-  public function getProduk($kode_kategori)
+  public function getProduk($kode_kategori, $per_page, $start)
   {
-      $this->db->select('sepatu.*, gambar.*');
-      $this->db->join('gambar', 'gambar.id_sepatu = sepatu.id_sepatu');
-      $this->db->where('kode_kategori', $kode_kategori);
-      $this->db->group_by('sepatu.id_sepatu');
-      return $this->db->get('sepatu')->result_array();
+    $this->db->select('sepatu.*, kategori.*, gambar.*');
+    $this->db->join('kategori', 'kategori.kode_kategori = sepatu.kode_kategori');
+    $this->db->join('gambar', 'gambar.id_sepatu = sepatu.id_sepatu');
+    $this->db->where('sepatu.kode_kategori', $kode_kategori);
+    $this->db->group_by('sepatu.id_sepatu');
+    return $this->db->get('sepatu', $per_page, $start)->result_array();
   }
 
   public function getKategori()

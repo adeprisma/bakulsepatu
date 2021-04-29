@@ -99,7 +99,7 @@
                         <h4>Link <span>Terkait</span> </h4>
                         <ul>
                             <li><a href="index.html">Beranda</a></li>
-                            <li><a href="produk/produk.html">Semua Produk</a></li>
+                            <li><a href="<?= base_url('produk/allproduct') ?>">Semua Produk</a></li>
 
                         </ul>
                     </div>

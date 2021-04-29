@@ -10,7 +10,7 @@
 			<div class="product-shoe-info shoe">
 				<div class="men-pro-item">
 					<div class="men-thumb-item">
-						<img src="<?= base_url('assets/img/sepatu/'.$kategori.'/'.$row['id_sepatu'].' - '.$row['nama_sepatu'].'/'. $row['gambar1']) ?>" alt="">
+						<img src="<?= base_url('assets/img/sepatu/'.$row['nama_kategori'].'/'.$row['id_sepatu'].' - '.$row['nama_sepatu'].'/'. $row['gambar1']) ?>" alt="">
 						<div class="men-cart-pro">
 							<div class="inner-men-cart-pro">
 								<a href="https://bakulsepatu.com/produk/detail/" class="link-product-add-cart">Detail</a>
@@ -56,9 +56,9 @@
 		<?php endforeach ?>												
 		<div class="clearfix"></div>
 		<div class="col-lg-12">
-			<ul class="pagination">
+			<!-- <ul class="pagination">
 				<ul class="setPaginate"> <li><a>1</a></li><li><a class="current_page" href="https://trekkersshoes.com/produk/wanita/page/2">2</a></li><li><a class="current_page" href="https://trekkersshoes.com/produk/wanita/page/3">3</a></li><li><a class="current_page" href="https://trekkersshoes.com/produk/wanita/page/4">4</a></li><li><a class="current_page" href="https://trekkersshoes.com/produk/wanita/page/5">5</a></li><li><a class="current_page" href="https://trekkersshoes.com/produk/wanita/page/2">Next</a> </li></ul>
-			</ul>
+			</ul> --> <?= $pagination ?>
 		</div>
 		</div>
 		<div class="clearfix"></div>
