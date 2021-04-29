@@ -54,5 +54,6 @@
     <div class="mobile-nav-button">
         <button id="trigger-overlay" type="button"><i class="fa fa-bars" aria-hidden="true"></i></button>
     </div>
+    <div class="clearfix"></div>
 </div>
 <div style="height:80;background-color: #080808;width:100%;position:fixed;z-index:10"></div>
