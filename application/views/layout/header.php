@@ -39,13 +39,6 @@
 <?= $html ?>
 <div class="header_agileits">
     <?= $logo ?>
-    <!-- <div class="logo">
-        <h1>
-            <a href="<?= base_url(); ?>">
-                <img class="navbar-brand-beranda" src="https://trekkersshoes.com/assets/img/logo.png">
-            </a>
-        </h1>
-    </div> -->
     <div class="overlay overlay-contentpush">
         <button type="button" class="overlay-close"><i class="fa fa-times" aria-hidden="true"></i></button>
         <nav>
