@@ -3349,7 +3349,7 @@ button.btn1 {
     }
 }
 
-@media(min-width:1000px) {
+@media(min-width:1025px) {
     .navbar-brand {
         position: fixed;
         font-size: .55em;
