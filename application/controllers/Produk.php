@@ -15,6 +15,23 @@ class Produk extends MY_Controller
 		
 	}
 
+	public function kids()
+	{
+		$url = base_url();
+		$img = base_url('assets/img/logo-bakulsepatu.png');
+		$data['kategori'] = 'kids';
+		$data['countProduk'] = $this->MProduk->count(0);
+		$data['katalog'] = $this->MProduk->getProduk(0);
+		$data['logo'] = '<div class="logo">
+							<h1>
+								<a href='.$url.'>
+									<img class="navbar-brand-produk" src='.$img.'>
+								</a>
+							</h1>
+						</div>';
+		$this->layout('produk', 'produk', $data);
+	}
+
 	public function wanita()
 	{
 		$url = base_url();
@@ -25,7 +42,7 @@ class Produk extends MY_Controller
 		$data['logo'] = '<div class="logo">
 							<h1>
 								<a href='.$url.'>
-									<img class="navbar-brand" src='.$img.'>
+									<img class="navbar-brand-produk" src='.$img.'>
 								</a>
 							</h1>
 						</div>';
@@ -42,7 +59,7 @@ class Produk extends MY_Controller
 		$data['logo'] = '<div class="logo">
 							<h1>
 								<a href='.$url.'>
-									<img class="navbar-brand" src='.$img.'>
+									<img class="navbar-brand-produk" src='.$img.'>
 								</a>
 							</h1>
 						</div>';
@@ -60,23 +77,6 @@ class Produk extends MY_Controller
 							<h1>
 								<a href='.$url.'>
 									<img class="navbar-brand" src='.$img.'>
-								</a>
-							</h1>
-						</div>';
-		$this->layout('produk', 'produk', $data);
-	}
-
-    public function kids()
-	{
-		$url = base_url();
-		$img = base_url('assets/img/logo-bakulsepatu.png');
-		$data['kategori'] = 'kids';
-		$data['countProduk'] = $this->MProduk->count(0);
-		$data['katalog'] = $this->MProduk->getProduk(0);
-		$data['logo'] = '<div class="logo">
-							<h1>
-								<a href='.$url.'>
-									<img class="navbar-brand-produk" src='.$img.'>
 								</a>
 							</h1>
 						</div>';
