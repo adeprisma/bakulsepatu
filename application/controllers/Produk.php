@@ -25,7 +25,7 @@ class Produk extends MY_Controller
 		$data['logo'] = '<div class="logo">
 							<h1>
 								<a href='.$url.'>
-									<img class="navbar-brand" src='.$img.'>
+									<img class="navbar-brand-produk" src='.$img.'>
 								</a>
 							</h1>
 						</div>';
@@ -42,7 +42,7 @@ class Produk extends MY_Controller
 		$data['logo'] = '<div class="logo">
 							<h1>
 								<a href='.$url.'>
-									<img class="navbar-brand" src='.$img.'>
+									<img class="navbar-brand-produk" src='.$img.'>
 								</a>
 							</h1>
 						</div>';
@@ -59,7 +59,7 @@ class Produk extends MY_Controller
 		$data['logo'] = '<div class="logo">
 							<h1>
 								<a href='.$url.'>
-									<img class="navbar-brand" src='.$img.'>
+									<img class="navbar-brand-produk" src='.$img.'>
 								</a>
 							</h1>
 						</div>';

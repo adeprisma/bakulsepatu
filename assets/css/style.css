@@ -3349,7 +3349,7 @@ button.btn1 {
     }
 }
 
-@media(min-width:414px) {
+@media(min-width:1000px) {
     .navbar-brand {
         position: fixed;
         font-size: .55em;
@@ -3385,7 +3385,7 @@ button.btn1 {
         text-shadow: 0 1px 2px rgba(0, 0, 0, .31);
         border: 0 solid #fff
     }
-    .navbar-brand-beranda {
+    .navbar-brand-beranda1 {
         margin-top: 0;
         position: fixed;
         font-size: .7em;
@@ -3402,7 +3402,7 @@ button.btn1 {
 }
 
 @media(max-width:768px) {
-    .navbar-brand {
+    .navbar-brand1 {
         margin-top: 20px;
         position: fixed;
         font-size: .55em;
@@ -3412,6 +3412,20 @@ button.btn1 {
     }
     .navbar-brand-beranda {
         margin-top: 5px;
+        position: fixed;
+        font-size: .7em;
+        color: #fff;
+        text-decoration: none;
+        border: 0 solid #fff;
+        text-transform: uppercase;
+        font-weight: 300;
+        display: block;
+        padding: 0;
+        height: 46px;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, .31)
+    }
+    .navbar-brand-produk {
+        margin-top: 9px;
         position: fixed;
         font-size: .7em;
         color: #fff;
@@ -3455,7 +3469,7 @@ button.btn1 {
         text-shadow: 0 1px 2px rgba(0, 0, 0, .31);
         border: 0 solid #fff
     }
-    .navbar-brand-beranda {
+    .navbar-brand-beranda1 {
         margin-top: 5px;
         position: fixed;
         font-size: .7em;
@@ -3480,7 +3494,7 @@ button.btn1 {
         text-shadow: 0 1px 2px rgba(0, 0, 0, .31);
         border: 0 solid #fff
     }
-    .navbar-brand-beranda {
+    .navbar-brand-beranda1 {
         margin-top: 5px;
         position: fixed;
         font-size: .7em;
@@ -3504,7 +3518,7 @@ button.btn1 {
         height: 42px;
         text-shadow: 0 1px 2px rgba(0, 0, 0, .31)
     }
-    .navbar-brand-beranda {
+    .navbar-brand-beranda1 {
         margin-top: 5px;
         position: fixed;
         font-size: .7em;
@@ -3529,7 +3543,7 @@ button.btn1 {
         text-shadow: 0 1px 2px rgba(0, 0, 0, .31);
         border: 0 solid #fff
     }
-    .navbar-brand-beranda {
+    .navbar-brand-beranda1 {
         width: 136px;
         margin-top: 5px;
         position: fixed;
@@ -3555,7 +3569,7 @@ button.btn1 {
         text-shadow: 0 1px 2px rgba(0, 0, 0, .31);
         border: 0 solid #fff
     }
-    .navbar-brand-beranda {
+    .navbar-brand-beranda1 {
         width: 145px;
         margin-top: 5px;
         position: fixed;
@@ -3582,7 +3596,7 @@ button.btn1 {
         text-shadow: 0 1px 2px rgba(0, 0, 0, .31);
         border: 0 solid #fff
     }
-    .navbar-brand-beranda {
+    .navbar-brand-beranda1 {
         width: 120px;
         margin-top: 5px;
         position: fixed;
