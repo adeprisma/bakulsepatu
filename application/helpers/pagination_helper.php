@@ -14,7 +14,7 @@ function pagination($url, $rowcount, $per_page)
     $config["base_url"] = base_url("produk/$url");
     $config["total_rows"] = $rowcount;
     $config["per_page"] = $per_page;
-    //$config['use_page_numbers'] = TRUE;
+    $config['use_page_numbers'] = TRUE;
     // $config['page_query_string'] = TRUE;
     // $config['query_string_segment'] = 'halaman';
 

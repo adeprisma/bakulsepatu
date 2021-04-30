@@ -13,7 +13,7 @@ class Produk extends MY_Controller
 		}
 		else
 		{
-			return $start = $this->uri->segment(3);
+			return $start = (($this->uri->segment(3) - 1) * 8);
 		}
 
 	}
