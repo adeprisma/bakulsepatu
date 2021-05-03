@@ -104,5 +104,22 @@ class Produk extends MY_Controller
 						</div>';
 		$this->layout('produk', 'produk', $data);
 	}
+
+	public function detail($id_sepatu)
+	{
+		$url = base_url();
+		$img = base_url('assets/img/logo-bakulsepatu.png');
+		$data['kategori'] = 'detail';
+		$data['logo'] = '<div class="logo">
+							<h1>
+								<a href='.$url.'>
+									<img class="navbar-brand" src='.$img.'>
+								</a>
+							</h1>
+						</div>';
+		$data['detail'] = $this->MProduk->detailProduk($id_sepatu);
+		$data['warna'] = $this->MProduk->getWarna($id_sepatu);
+		$this->layout('produk', 'detail', $data);
+	}
 		
 }

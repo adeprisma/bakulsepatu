@@ -13,7 +13,7 @@
 						<img src="<?= base_url('assets/img/sepatu/'.$row['nama_kategori'].'/'.$row['id_sepatu'].' - '.$row['nama_sepatu'].'/'. $row['gambar1']) ?>" alt="">
 						<div class="men-cart-pro">
 							<div class="inner-men-cart-pro">
-								<a href="https://bakulsepatu.com/produk/detail/" class="link-product-add-cart">Detail</a>
+								<a href="<?= base_url('produk/detail/'.$row['id_sepatu']); ?>" class="link-product-add-cart">Detail</a>
 							</div>
 						</div>
 						<?php if ($row['status'] == 1) {?>
@@ -25,7 +25,7 @@
 					</div>
 					<div class="item-info-product">
 						<h4>
-							<a href="https://bakulsepatu.com/produk/detail/"><?= $row['nama_sepatu'] ?></a>
+							<a href="<?= base_url('produk/detail/'.$row['id_sepatu']); ?>"><?= $row['nama_sepatu'] ?></a>
 						</h4>
 						<!-- <div class="info-product-price">
 							<div class="grid_meta">
