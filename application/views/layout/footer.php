@@ -89,7 +89,7 @@
         <div class="footer_inner_info_w3ls_agileits">
             <div class="col-md-3 footer-left">
                 <!--<h2><a href="beranda"><span>T</span>Bakul Sepatu</a></h2>-->
-                <h2><a href="index.html"><img src="<?= base_url("assets/img/logo-bakulsepatu.png")?>" style="margin-top:-25px;" width="200px"></a></h2>
+                <h2><a href="home.php"><img src="<?= base_url("assets/img/logo-bakulsepatu.png")?>" style="margin-top:-25px;" width="200px"></a></h2>
                 <p><b>Shoes is Your Bestfriend</b></p>
                 
             </div>
