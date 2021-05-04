@@ -1,7 +1,12 @@
+<style>
+	.space {
+		height: 450px;
+	}
+</style>
 <div class="ads-grid_shop">
 		<div class="shop_inner_inf">
 			<div class="col-md-4 single-right-left ">
-				<div class="images_3_of_1">
+				<div class="grid images_3_of_2">
 					<div class="flexslider">
 						<div class="clearfix"></div>
 							<ul class="slides" style="width: 2000%; transition-duration: 0.6s; transform: translate3d(-3331.2px, 0px, 0px);">
@@ -26,6 +31,7 @@
 						</ul>
 					</div>
 				</div>
+				<div class="space" style="display: none"></div>
 			</div>
 			<div class="col-md-8 single-right-left simpleCart_shelfItem">
 				<h3><?= $detail['nama_sepatu'] ?></h3>
@@ -63,7 +69,7 @@
 	</div>
 	<script>
 		function MyAlert(){
-			$('#loadingmessage').show(400);
+			$('#loadingmessage').show('slow');
 			setTimeout(function(){ 
 			var warna = $('input[type="radio"]:checked').val();
 	
@@ -73,8 +79,8 @@
                 data: {'warna': warna},
                 success: function (data) {
 					$('#loadingmessage').hide();
-					
-					$('.flexslider').html(data);
+					$('.space').show();
+					$('.images_3_of_2').html(data);
 					$('.flexslider').flexslider({
 						animation: "slide",
 						controlNav: "thumbnails"
