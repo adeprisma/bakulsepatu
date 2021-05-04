@@ -172,4 +172,18 @@ class MProduk extends CI_Model
     $this->db->insert_batch('gambar', $dataBatch);
   }
 
+  public function detailProduk($id_sepatu)
+  {
+    $this->db->join('gambar', 'gambar.id_sepatu = sepatu.id_sepatu');
+    $this->db->join('kategori', 'kategori.kode_kategori = sepatu.kode_kategori');
+    $this->db->where('sepatu.id_sepatu', $id_sepatu);
+    return $this->db->get('sepatu')->row_array();
+  }
+
+  public function getWarna($id_sepatu)
+  {
+    $this->db->where('id_sepatu', $id_sepatu);
+    return $this->db->get('gambar')->result();
+  }
+
 }

@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="<?= base_url('assets/css/shop.css') ?>" media="screen" property="">
     <link rel="stylesheet" href="<?= base_url('assets/css/style.css') ?>" media="all">
     <link rel="stylesheet" href="<?= base_url('assets/css/style7.css') ?>" media="all">
+    <link rel="stylesheet" href="<?= base_url('assets/css/flexslider.css') ?>" media="all">
+    <link rel="stylesheet" href="<?= base_url('assets/css/easy-responsive-tabs.css') ?>" media="all">
     <link rel="stylesheet" href="<?= base_url('assets/css/floating-wpp.css') ?>" media="all"> 
     <link rel="stylesheet" href="<?= base_url('assets/font-awesome/font-awesome.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/font-awesome/font-awesome.min.css') ?>">
