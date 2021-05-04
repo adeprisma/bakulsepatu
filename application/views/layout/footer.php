@@ -81,7 +81,7 @@
     </div>
 
 <div class="navbar">
-    <a href="index.html" class="active"><i class="fa fa-home"></i><br>Home</a>
+    <a href="<?= base_url() ?>" class="active"><i class="fa fa-home"></i><br>Home</a>
 </div>
 
     <!-- footer -->
