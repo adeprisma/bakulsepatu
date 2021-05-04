@@ -80,18 +80,14 @@
                 data: {'warna': warna},
                 success: function (data) {
 					$('#loadingmessage').hide();
-					// $('.space').attr("style","display: block");
+					$('.space').show(500);
 					$('.flexslider').remove();
-					$('.mid_slider_w3lsagile').hide();
-					$('.footer_agileinfo_w3').hide();
 					$('.images_3_of_2').html(data);
-					// $('.space').attr("style","display: none");
+					$('.space').attr("style","display: none");
 					$('.flexslider').flexslider({
 						animation: "slide",
 						controlNav: "thumbnails"
 					});
-					$('.mid_slider_w3lsagile').show(1000);
-					$('.footer_agileinfo_w3').show(1000);
                 }
             });
 			
