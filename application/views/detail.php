@@ -81,6 +81,7 @@
                 success: function (data) {
 					$('#loadingmessage').hide();
 					// $('.space').attr("style","display: block");
+					$('.flexslider').remove();
 					$('.mid_slider_w3lsagile').hide();
 					$('.footer_agileinfo_w3').hide();
 					$('.images_3_of_2').html(data);
@@ -89,8 +90,8 @@
 						animation: "slide",
 						controlNav: "thumbnails"
 					});
-					$('.mid_slider_w3lsagile').show();
-					$('.footer_agileinfo_w3').show();
+					$('.mid_slider_w3lsagile').show(1000);
+					$('.footer_agileinfo_w3').show(1000);
                 }
             });
 			
