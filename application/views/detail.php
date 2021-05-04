@@ -31,7 +31,8 @@
 						</ul>
 					</div>
 				</div>
-				<div class="space" style="display: none"></div>
+				<div class="space" style="display: none">
+				</div>
 			</div>
 			<div class="col-md-8 single-right-left simpleCart_shelfItem">
 				<h3><?= $detail['nama_sepatu'] ?></h3>
@@ -79,17 +80,21 @@
                 data: {'warna': warna},
                 success: function (data) {
 					$('#loadingmessage').hide();
-					$('.space').show();
+					// $('.space').attr("style","display: block");
+					$('.mid_slider_w3lsagile').hide();
+					$('.footer_agileinfo_w3').hide();
 					$('.images_3_of_2').html(data);
+					// $('.space').attr("style","display: none");
 					$('.flexslider').flexslider({
 						animation: "slide",
 						controlNav: "thumbnails"
 					});
-				
-					
-
+					$('.mid_slider_w3lsagile').show();
+					$('.footer_agileinfo_w3').show();
                 }
             });
+			
 			}, 1000);
+			
 		}
 	</script>
