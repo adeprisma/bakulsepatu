@@ -12,28 +12,27 @@
                     <li data-target="#myCarousel" data-slide-to="3" class=""></li>
                 </ol>
 
-
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
                         <div class="row">
                             <div class="col-md-3 col-sm-3 col-xs-3 slidering">
                                 <div class="thumbnail"><img
-                                        src="https://trekkersshoes.com/assets/img/slider-footer/sl1.jpg" alt="Image"
+                                        src="<?= base_url('assets/img/sl1.jpg') ?>" alt="Image"
                                         style="max-width:100%;"></div>
                             </div>
                             <div class="col-md-3 col-sm-3 col-xs-3 slidering">
                                 <div class="thumbnail"><img
-                                        src="https://trekkersshoes.com/assets/img/slider-footer/sl3.jpg" alt="Image"
+                                        src="<?= base_url('assets/img/sl3.jpg') ?>" alt="Image"
                                         style="max-width:100%;"></div>
                             </div>
                             <div class="col-md-3 col-sm-3 col-xs-3 slidering">
                                 <div class="thumbnail"><img
-                                        src="https://trekkersshoes.com/assets/img/slider-footer/sl5.jpg" alt="Image"
+                                        src="<?= base_url('assets/img/sl5.jpg') ?>" alt="Image"
                                         style="max-width:100%;"></div>
                             </div>
                             <div class="col-md-3 col-sm-3 col-xs-3 slidering">
                                 <div class="thumbnail"><img
-                                        src="https://trekkersshoes.com/assets/img/slider-footer/sl7.jpg" alt="Image"
+                                        src="<?= base_url('assets/img/sl7.jpg') ?>" alt="Image"
                                         style="max-width:100%;"></div>
                             </div>
                         </div>
@@ -42,22 +41,22 @@
                         <div class="row">
                             <div class="col-md-3 col-sm-3 col-xs-3 slidering">
                                 <div class="thumbnail"><img
-                                        src="https://trekkersshoes.com/assets/img/slider-footer/sl2.jpg" alt="Image"
+                                        src="<?= base_url('assets/img/sl2.jpg') ?>" alt="Image"
                                         style="max-width:100%;"></div>
                             </div>
                             <div class="col-md-3 col-sm-3 col-xs-3 slidering">
                                 <div class="thumbnail"><img
-                                        src="https://trekkersshoes.com/assets/img/slider-footer/sl4.jpg" alt="Image"
+                                        src="<?= base_url('assets/img/sl4.jpg') ?>" alt="Image"
                                         style="max-width:100%;"></div>
                             </div>
                             <div class="col-md-3 col-sm-3 col-xs-3 slidering">
                                 <div class="thumbnail"><img
-                                        src="https://trekkersshoes.com/assets/img/slider-footer/sl6.jpg" alt="Image"
+                                        src="<?= base_url('assets/img/sl6.jpg') ?>" alt="Image"
                                         style="max-width:100%;"></div>
                             </div>
                             <div class="col-md-3 col-sm-3 col-xs-3 slidering">
                                 <div class="thumbnail"><img
-                                        src="https://trekkersshoes.com/assets/img/slider-footer/sl8.jpg" alt="Image"
+                                        src="<?= base_url('assets/img/sl8.jpg') ?>" alt="Image"
                                         style="max-width:100%;"></div>
                             </div>
                         </div>
@@ -76,8 +75,7 @@
 
             </div>
         </div>
-
-        <div class="clearfix"> </div>
+        <div class="clearfix"></div>
     </div>
 
 <div class="navbar">
@@ -231,7 +229,7 @@
                 }, 1000);
             });
 
-            $("#modal-popup").modal('show');
+            $("#exampleModalCenter").modal('show');
         });
 
         var modal = document.getElementById('modal-popup');
