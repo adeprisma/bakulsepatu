@@ -31,11 +31,10 @@
 							<div class="grid_meta">
 								<div class="product_price">
 									<div class="grid-price">
-										<span class="money">Rp.&nbsp;155,500 (Disc. 30%) jadi</span>
+										<span class="money">Rp.&nbsp;<?= number_format($row['harga'])?> (Disc. 30%) menjadi <?php $disc = $row['harga'] * 30 / 100; $hargafix = $row['harga'] - $disc; echo 'Rp. '.number_format($hargafix); ?></span>
 									</div>
 								</div>
 							</div>
-							
 							<!-- <div class="shoe single-item hvr-outline-out">
 								<form action="#" method="post">
 									<input type="hidden" name="cmd" value="_cart">
