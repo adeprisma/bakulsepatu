@@ -360,9 +360,17 @@ p.sbmincart-empty-text {
 }
 
 span.money {
-    font-size: 1em;
+    font-size: 0.93em;
     font-weight: 700;
 	margin-left: -15px;
+}
+
+@media(max-width:768px){
+	span.money {
+		font-size: 0.6em;
+		font-weight: 700;
+		margin-left: -15px;
+	}
 }
 .inner-men-cart-pro {
 	height: 100%;
@@ -855,8 +863,8 @@ span.item_price {
     width: 100%;
 }
 .grid_meta {
-    float: left;
-    width: 80%;
+    /* float: left; */
+    width: 100%;
 	text-align: left;
 }
 .info-product-price {
