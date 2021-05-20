@@ -27,16 +27,15 @@
 						<h4>
 							<a href="<?= base_url('produk/detail/'.$row['id_sepatu']); ?>"><?= $row['nama_sepatu'] ?></a>
 						</h4>
-						<!-- <div class="info-product-price">
+						<div class="info-product-price">
 							<div class="grid_meta">
 								<div class="product_price">
-									<div class="grid-price ">
-										
-										<span class="money ">Rp.&nbsp;155,500</span>    																		<span class="money ">Rp.&nbsp;</span>
+									<div class="grid-price">
+										<span class="money">Rp.&nbsp;155,500 (Disc. 30%) jadi</span>
 									</div>
 								</div>
 							</div>
-							<div class="shoe single-item hvr-outline-out">
+							<!-- <div class="shoe single-item hvr-outline-out">
 								<form action="#" method="post">
 									<input type="hidden" name="cmd" value="_cart">
 									<input type="hidden" name="add" value="1">
@@ -46,8 +45,8 @@
 										<button type="button" class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
 									</a>
 								</form>
-							</div>
-						</div> -->
+							</div> -->
+						</div>
 						<div class="clearfix"></div>
 					</div>
 				</div>
