@@ -2004,14 +2004,14 @@ button.btn1 {
     }
 }
 
-@media(max-width:991px) {
+@media(max-width:768px) {
     .left-ads-display {
-        padding: 0;
+        padding: 30px;
         margin-top: 2em
     }
     .product-shoe-info {
-        padding: 15px;
-        width: 47%;
+        padding: 30px;
+        width: 100%;
         margin: .5em;
         float: left
     }
@@ -2232,7 +2232,7 @@ button.btn1 {
     }
     .product-shoe-info {
         padding: 15px;
-        width: 46%;
+        width: 100%;
         margin: .5em;
         float: left
     }
@@ -2401,7 +2401,7 @@ button.btn1 {
     }
     .product-shoe-info {
         padding: 15px;
-        width: 45%;
+        width: 46%;
         margin: .5em;
         float: left
     }

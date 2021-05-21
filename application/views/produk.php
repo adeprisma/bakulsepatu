@@ -7,9 +7,10 @@
 		<div class="product-sec1">
 		<?php foreach ($katalog as $row) :?>
 		<div class="col-md-3 product-men">
-			<div class="product-shoe-info shoe">
+			<div class="product-shoe-info">
 				<div class="men-pro-item">
 					<div class="men-thumb-item">
+						<img src="<?= base_url('assets/img/30percent.png')?>" style="width:20%;position:absolute;top:75%;left:40%;">
 						<img src="<?= base_url('assets/img/sepatu/'.$row['nama_kategori'].'/'.$row['id_sepatu'].' - '.$row['nama_sepatu'].'/'. $row['gambar1']) ?>" alt="">
 						<div class="men-cart-pro">
 							<div class="inner-men-cart-pro">
@@ -31,7 +32,8 @@
 							<div class="grid_meta">
 								<div class="product_price">
 									<div class="grid-price">
-										<span class="money">Rp.&nbsp;<?= number_format($row['harga'])?> (Disc. 30%) menjadi <?php $disc = $row['harga'] * 30 / 100; $hargafix = $row['harga'] - $disc; echo 'Rp. '.number_format($hargafix); ?></span>
+										<span class="money">Rp.&nbsp;<?= number_format($row['harga'])?></span>
+										<span class="price"><?php $disc = $row['harga'] * 30 / 100; $hargafix = $row['harga'] - $disc; echo 'Rp. '.number_format($hargafix); ?></span>
 									</div>
 								</div>
 							</div>
@@ -47,7 +49,6 @@
 									</a>
 								</form>
 							</div> -->
-						
 						<div class="clearfix"></div>
 					</div>
 				</div>
@@ -56,9 +57,7 @@
 		<?php endforeach ?>												
 		<div class="clearfix"></div>
 		<div class="col-md-12 text-center">
-			<!-- <ul class="pagination">
-				<ul class="setPaginate"> <li><a>1</a></li><li><a class="current_page" href="https://trekkersshoes.com/produk/wanita/page/2">2</a></li><li><a class="current_page" href="https://trekkersshoes.com/produk/wanita/page/3">3</a></li><li><a class="current_page" href="https://trekkersshoes.com/produk/wanita/page/4">4</a></li><li><a class="current_page" href="https://trekkersshoes.com/produk/wanita/page/5">5</a></li><li><a class="current_page" href="https://trekkersshoes.com/produk/wanita/page/2">Next</a> </li></ul>
-			</ul> --> <?= $pagination ?>
+			<?= $pagination ?>
 		</div>
 		</div>
 		<div class="clearfix"></div>

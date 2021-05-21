@@ -302,8 +302,15 @@ p.sbmincart-empty-text {
     position: relative;
 }
 .product-men {
-    padding-left: 0;
+    padding-left: 0px;
 	/*padding-bottom:15px;*/
+}
+
+@media (max-width: 768px){
+	.product-men {
+		margin-right: -10px;
+		padding-left: 0px;
+	}
 }
 /*-- Model-Slider --*/
 /*-- effect on products --*/
@@ -360,16 +367,32 @@ p.sbmincart-empty-text {
 }
 
 span.money {
-    font-size: 0.93em;
-    font-weight: 700;
+    font-size: 0.9em;
+    text-decoration: line-through;
+	text-decoration-color:red;
+	text-decoration-thickness: 1px;
+	color: gray;
 	margin-left: -15px;
+}
+
+.price {
+	font-size: 1.1em; 
+	font-weight: 700
 }
 
 @media(max-width:768px){
 	span.money {
-		font-size: 0.6em;
-		font-weight: 700;
+		font-size: 0.7em;
+		text-decoration: line-through;
+		text-decoration-color:red;
+		text-decoration-thickness: 1px;
+		color: gray;
 		margin-left: -15px;
+	}
+
+	.price {
+		font-size: 0.9em; 
+		font-weight: 700
 	}
 }
 .inner-men-cart-pro {
@@ -467,8 +490,10 @@ ul.stars li a:hover {
 	color:#fb383b;
 }
 .product-shoe-info {
-    padding: 15px;
+    padding: 20px;
+	width: 102%;
     border: 1px solid #e4e4e4;
+	margin-bottom: 10px;
 }
 
 .product-shoe-info-trx {
@@ -790,7 +815,22 @@ input.checked {
 
 .wrapper_top_shop {
     padding: 15px;
+    margin: 10px;
     border: 1px solid #e4e4e4;
+}
+
+@media (max-width: 768px) {
+	.wrapper_top_shop {
+		padding: 10px;
+		padding-right: 0px;
+		border: 1px solid #e4e4e4;
+	}
+
+	.men-thumb-item {
+		text-align: center;
+		position: relative;
+		margin-bottom:10px;
+	}
 }
 /*-- //special deals --*/
 
@@ -799,6 +839,7 @@ input.checked {
     text-align: center;
     position: relative;
 }
+
 .item-info-product {
 	text-align: center;
 }
@@ -828,7 +869,6 @@ span.item_price {
 }
 
 .product-sec1.product-sec2 {
-	background: url(../img/bg1.html)no-repeat 0px 0px;
 	background-attachment: fixed;
 	background-size: cover;
 	-webkit-background-size: cover;
@@ -876,8 +916,8 @@ span.item_price {
 @media only screen and (min-width:390px) and (max-width:394px)
 {
     .info-product-price {
-	margin: 12px -3px;
-	padding: 1em;
+	margin: 5px -5px;
+	padding-left: 1em;
 	border-top: 1px solid #ddd;
     }   
 }
@@ -1196,7 +1236,7 @@ input.button.add {
 
 @media(max-width:980px){
 	.item-info-product h4 a {
-		font-size: 7.5px;
+		font-size: 9px;
 	}
 	.shoe.single-item {
 		float: right;
@@ -1240,7 +1280,7 @@ input.button.add {
 	}
 
 }
-@media(max-width:800px){
+@media(max-width:768px){
 	.single_page h6 {
 		font-size: 1.2em;
 		margin: 1em 0;
@@ -1249,8 +1289,8 @@ input.button.add {
        margin: 1em 0 0;
 	}
 	.product-shoe-info {
-		padding: 15px;
-		width: 47%;
+		padding: 20px;
+		width: 102%;
 		margin: 0.5em;
 		float: left;
 	}
