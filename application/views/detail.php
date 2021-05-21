@@ -46,6 +46,7 @@
 						    <div id="loadingmessage" style="display:none">
                 				<img src="<?= base_url('assets/img/tenor.gif'); ?>" style="margin-left:20%;">
                 			</div>
+							<br>
 							<h5>Warna :</h5>
 
 							<div class="result"></div>
