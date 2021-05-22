@@ -18,7 +18,7 @@
 							</div>
 						</div>
 						<?php if ($row['status'] == 1) {?>
-						<span class="product-new-top">Produk Baru</span>
+						<div class="product-new-top"></div>
 						<?php }?>																
 						<span class="product-rating-top">
 							<ul class="stars"></ul>

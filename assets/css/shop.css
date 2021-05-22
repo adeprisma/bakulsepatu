@@ -479,16 +479,15 @@ p.sbmincart-empty-text {
 }*/
 
 .product-new-top {
-    background: #fb383b;
-    color: #fff;
+    background: url(../img/new-product.png) no-repeat;
+    background-size: cover;
     right: 0;
     position: absolute;
     top: 0;
-    /*width: 80px;*/
-    font-size: 13px;
-    height: 29px;
-    text-align: center;
-    line-height: 2.3;
+    width: 100px;
+    height: 60px;
+    /* text-align: center;
+    line-height: 2.3; */
 }
 
 .product-new-top2 {
@@ -1449,9 +1448,9 @@ input.button.add {
         right: 0;
         top: 0;
         /*width: 65px;*/
-        font-size: 13px;
+        /* font-size: 13px;
         height: 29px;
-        line-height: 2.3;
+        line-height: 2.3; */
     }
     .img-deals {
         padding-left: 0;
@@ -1482,10 +1481,12 @@ input.button.add {
     .product-new-top {
         right: 0;
         top: 0;
+        width: 60px;
+        height: 35px;
         /*width: 65px;*/
-        font-size: 13px;
+        /* font-size: 13px;
         height: 29px;
-        line-height: 2.3;
+        line-height: 2.3; */
     }
     .img-deals {
         padding-left: 0;
