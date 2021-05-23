@@ -1102,18 +1102,18 @@ li.dropdown.act a.w3_icons_act {
     text-align: left;
     width: 100%;
     height: 100%;
-    padding: 5em
+    padding: 3em
 }
 
 .style-grid-1-text h3,
 .style-grid-2-text h3 {
-    font-size: 30px;
+    font-size: 29px;
     text-align: left;
     color: #FFF;
     margin-bottom: 20px;
     font-weight: 700;
     letter-spacing: 1px;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, .6)
+    text-shadow: 1px 1px 2px darkred, 0 0 25px red, 0 0 5px darkred;
 }
 
 .style-grid-1-text p {
@@ -2052,14 +2052,21 @@ button.btn1 {
     }
 }
 
-@media(max-width:800px) {
+.product-shoe-info {
+    padding: 10px;
+    width: 100%;
+    margin: .5em;
+    float: left
+}
+
+@media(max-width:991px) {
     .left-ads-display {
         padding: 10px;
         margin-top: 2em
     }
     .product-shoe-info {
         padding: 10px;
-        width: 46%;
+        width: 50%;
         margin: .5em;
         float: left
     }
