@@ -485,7 +485,7 @@ p.sbmincart-empty-text {
     position: absolute;
     top: 0;
     width: 100px;
-    height: 60px;
+    height: 55px;
     /* text-align: center;
     line-height: 2.3; */
 }
@@ -511,7 +511,7 @@ p.sbmincart-empty-text {
 } */
 
 span.money {
-    font-size: 0.9em;
+    font-size: 1em;
     text-decoration: line-through;
     text-decoration-color: red;
     text-decoration-thickness: 1px;
@@ -520,7 +520,7 @@ span.money {
 }
 
 .price {
-    font-size: 1.1em;
+    font-size: 1.2em;
     font-weight: 700
 }
 
