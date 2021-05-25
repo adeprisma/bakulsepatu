@@ -109,7 +109,7 @@ if ($this->session->flashdata('result_publish')) {
             <label style="margin-top: 8px">Harga</label>&nbsp;
             <div class="input-group" style="width: auto">
                 <span class="input-group-addon" id="basic-addon1">Rp.</span>
-                <input type="number" class="form-control" placeholder="0" aria-describedby="basic-addon1" required>
+                <input type="number" class="form-control" name="harga" value="" placeholder="0" required>
             </div>
         </div>
     </div>
