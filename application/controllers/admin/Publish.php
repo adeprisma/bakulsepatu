@@ -20,6 +20,7 @@ class Publish extends Admin_Controller
         if (isset($_POST['submit']))
         {
             $this->MProduk->addSepatu();
+            $this->session->set_flashdata('success', 'Data berhasil disimpan');
             redirect('admin/publish', 'refresh');
            
         }

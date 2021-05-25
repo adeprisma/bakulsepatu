@@ -40,6 +40,11 @@
             background: #75a4fa;
             border-color: #75a4fa
         }
+
+        .justify {
+            display: flex;
+            justify-content: flex-start;
+        }
 </style>
 <script src="<?= base_url('assets/admin/ckeditor/ckeditor.js') ?>"></script>
 <h1><img src="<?= base_url('assets/img/admin/shop-cart-add-icon.png') ?>" class="header-img" style="margin-top:-3px;">Publish product</h1>
@@ -61,6 +66,14 @@ if ($this->session->flashdata('result_publish')) {
     <?php
 }
 ?>
+<?php if ($this->session->flashdata('success')) : ?>
+<div class="alert alert-success alert-dismissible" role="alert">
+<strong>GG Geming!</strong><?= $this->session->flashdata('success') ?>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<?php endif; ?>
 <form method="POST" action="" enctype="multipart/form-data">
     <div class="form-group"> 
         <label>Nama Sepatu</label>
@@ -92,8 +105,13 @@ if ($this->session->flashdata('result_publish')) {
         </select>
     </div>
     <div class="form-group for-shop">
-        <label>Harga</label>
-        <input type="number" name="harga" min="0.00" step="0.01" required>
+        <div class="justify">
+            <label style="margin-top: 8px">Harga</label>&nbsp;
+            <div class="input-group" style="width: auto">
+                <span class="input-group-addon" id="basic-addon1">Rp.</span>
+                <input type="number" class="form-control" placeholder="0" aria-describedby="basic-addon1" required>
+            </div>
+        </div>
     </div>
 
     <div class="center"><h4>Unggah Gambar</h4></div>

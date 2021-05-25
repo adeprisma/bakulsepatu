@@ -37,9 +37,9 @@
 			<div class="col-md-8 single-right-left simpleCart_shelfItem">
 				<h3><?= $detail['nama_sepatu'] ?></h3>
 				    <div class="rating1">
-						<ul class="stars">
-														
+						<ul class="stars">						
 						</ul>
+						<p><span class="item_price">Rp.&nbsp;<?php $disc = $detail['harga'] * 30 / 100; $hargafix = $detail['harga'] - $disc; echo number_format($hargafix); ?></span></p>
 					</div>				
 					<div class="color-quality">
 						<div class="color-quality-right">
