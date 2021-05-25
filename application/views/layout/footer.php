@@ -111,7 +111,7 @@
                                 </div>
                                 <div class="address-right">
                                     <h6>Layanan Pelanggan</h6>
-                                    <p>+62852 3277 7499</p>
+                                    <p>+62856 5513 1099</p>
                                 </div>
                                 <div class="clearfix"> </div>
                             </div>
