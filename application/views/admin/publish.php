@@ -91,7 +91,11 @@ if ($this->session->flashdata('result_publish')) {
             <option value="0" <?= isset($_POST['in_slider']) && $_POST['in_slider'] == 0 || !isset($_POST['in_slider']) ? 'selected' : '' ?>>Produk Lama</option>
         </select>
     </div>
-    
+    <div class="form-group for-shop">
+        <label>Harga</label>
+        <input type="number" name="harga" min="0.00" step="0.01" required>
+    </div>
+
     <div class="center"><h4>Unggah Gambar</h4></div>
     <div class="box" id="box">
         <div class="form form-horizontal">

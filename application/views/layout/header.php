@@ -4,8 +4,11 @@
     <title>Bakul Sepatu</title>
     <link rel="shortcut icon" type="image/x-icon" href="<?= base_url('assets/img/favicon.ico') ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="-1"/>
+    
     <!-- custom-theme -->
-   
     <link rel="stylesheet" href="<?= base_url('assets/css/pagination.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/bootstrap.css') ?>">
     <link rel="stylesheet" href="<?= base_url('assets/css/form-elements.css') ?>">
