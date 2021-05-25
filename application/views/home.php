@@ -57,7 +57,7 @@
         <div class="col-md-6 style-grid style-grid-1">
             <img src="assets/img/sepatu1.jpg">
             <div class="style-grid-1-text">
-                <h3>ALL ITEMS START FROM 100K IDR</h3>
+                <h3>ALL ITEMS START FROM 90K IDR</h3>
             </div>
         </div>
     </div>
@@ -106,7 +106,7 @@
               <div class="style-image-2">
                 <img src="assets/img/sl-marvel-tkl.jpg">
                 <div class="style-grid-2-text">
-                    <h3>SL-MARVEL-TKL</h3>
+                    <h3>SL-MARVEL (TKL)</h3>
                 </div>
             </div>
             <div class="grid_sec_info last">
@@ -142,7 +142,7 @@
 		      <div class="modal-body1 p-5 d-flex align-items-center">
 		      	<div class="text w-100 text-center py-5">
 		      		<h2 class="mb-0">ALL PRICES</h2>
-		      		<h4 class="mb-4">Start From 100K IDR</h4>
+		      		<h4 class="mb-4">Start From 90K IDR</h4>
 		      		<form action="#" class="code-form">
                 <div class="form-group d-flex">
                   <input type="text" class="form-control" placeholder="Enter code">
