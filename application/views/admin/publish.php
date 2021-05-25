@@ -68,7 +68,7 @@ if ($this->session->flashdata('result_publish')) {
 ?>
 <?php if ($this->session->flashdata('success')) : ?>
 <div class="alert alert-success alert-dismissible" role="alert">
-<strong>GG Geming!</strong><?= $this->session->flashdata('success') ?>
+<strong>GG Geming!</strong> <?= $this->session->flashdata('success') ?>
   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
