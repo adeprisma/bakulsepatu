@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Produk extends MY_Controller 
 {
-	private $per_page = 8;
+	private $per_page = 20;
 
 	function start()
 	{
@@ -13,7 +13,7 @@ class Produk extends MY_Controller
 		}
 		else
 		{
-			return $start = (($this->uri->segment(3) - 1) * 8);
+			return $start = (($this->uri->segment(3) - 1) * $this->per_page);
 		}
 
 	}
