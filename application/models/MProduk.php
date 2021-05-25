@@ -4,20 +4,17 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class MProduk extends CI_Model
 {
 
-  public function __construct()
-  {
+  public function __construct() {
     parent::__construct();
   }
 
-  public function count($count)
-  {
+  public function count($count) {
       $this->db->from('sepatu');
       $this->db->where('kode_kategori', $count);
       return $this->db->count_all_results();
   }
 
-  public function getSemuaProduk($limit, $start)
-  {
+  public function getSemuaProduk($limit, $start) {
     $sql = $this->db->query("SELECT * FROM sepatu JOIN gambar on gambar.id_sepatu = sepatu.id_sepatu\n"
                               . "JOIN kategori on kategori.kode_kategori = sepatu.kode_kategori\n"
                               . "GROUP BY gambar.id_sepatu\n"
@@ -27,8 +24,7 @@ class MProduk extends CI_Model
     return $sql->result_array();
   }
 
-  public function getProduk($kode_kategori, $per_page, $start)
-  {
+  public function getProduk($kode_kategori, $per_page, $start) {
     $this->db->select('sepatu.*, kategori.*, gambar.*');
     $this->db->join('kategori', 'kategori.kode_kategori = sepatu.kode_kategori');
     $this->db->join('gambar', 'gambar.id_sepatu = sepatu.id_sepatu');
@@ -92,7 +88,8 @@ class MProduk extends CI_Model
       "nama_sepatu" => $this->input->post('nama_sepatu'),
       "kode_kategori" => $kategori,
       "kode_model" => $this->input->post('model'),
-      "status" => $this->input->post('status')
+      "status" => $this->input->post('status'),
+      "harga" => $this->input->post('harga')
     ];
     $this->db->insert('sepatu', $data);
 
