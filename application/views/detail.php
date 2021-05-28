@@ -1,3 +1,7 @@
+<link rel="stylesheet" href="<?= base_url('assets/css/frontend.css') ?>">
+<link rel="stylesheet" href="<?= base_url('assets/css/frontend.min.css') ?>">
+<link rel="stylesheet" href="<?= base_url('assets/css/global.css') ?>">
+<link rel="stylesheet" id="google-fonts-1-css" href="https://fonts.googleapis.com/css?family=Quicksand%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic%7CComfortaa%3A100%2C100italic%2C200%2C200italic%2C300%2C300italic%2C400%2C400italic%2C500%2C500italic%2C600%2C600italic%2C700%2C700italic%2C800%2C800italic%2C900%2C900italic&amp;ver=4.9.8" type="text/css" media="all">
 <style>
 	.space {
 		height: 450px;
@@ -37,8 +41,6 @@
 			<div class="col-md-8 single-right-left simpleCart_shelfItem">
 				<h3><?= $detail['nama_sepatu'] ?></h3>
 				    <div class="rating1">
-						<ul class="stars">						
-						</ul>
 						<p><span class="item_price">Rp.&nbsp;<?php $disc = $detail['harga'] * 30 / 100; $hargafix = $detail['harga'] - $disc; echo number_format($hargafix); ?></span></p>
 					</div>				
 					<div class="color-quality">
@@ -46,18 +48,23 @@
 						    <div id="loadingmessage" style="display:none">
                 				<img src="<?= base_url('assets/img/tenor.gif'); ?>" style="margin-left:20%;">
                 			</div>
-							<br>
 							<h5>Warna :</h5>
 
 							<div class="result"></div>
 							<?php foreach ($warna as $row):?>
-							<input type="radio" name="warna" value="<?= $row->id_gambar?>"<?= $row->nama_warna == $detail['nama_warna'] ? 'checked':'' ?> onclick="MyAlert()">
+							<input id="color" type="radio" name="warna" value="<?= $row->id_gambar?>"<?= $row->nama_warna == $detail['nama_warna'] ? 'checked':'' ?> onclick="MyAlert()"></input>
 							<span class="span"><?= strtoupper($row->nama_warna) ?></span><br>
 							<?php endforeach?>						
 						</div>
 					<br>
 					</div>
-				<input type="hidden" name="cek_style" id="cek-style" value="SL-VENUS">
+					<div class="elementor-widget-button">
+                        <a id="linkwa" href="https://wa.me/6285655131099?text=Apakah+stok+dengan+nama+produk+%2A<?= $detail['nama_sepatu'] ?>%2A+warna+%2A<?= "hello" ?>%2A+tersedia+%3F" target="blank" class="elementor-button elementor-size-sm" role="button">	
+                            <i class="fa fa-whatsapp bold" aria-hidden="true"></i>
+                            <span>Beli Via WhatsApp</span>
+                        </a>
+                    </div>
+				<input type="hidden" name="cek_style" id="cek-style" value="">
 				<input type="hidden" name="cek_jns" id="cek-jns-stok" value="0">
 				<input type="hidden" name="status_fav" id="cek-status-fav" value="1">
 				<input type="hidden" name="cek_warna" id="cek-warna" value="">
@@ -74,7 +81,6 @@
 			$('#loadingmessage').show('slow');
 			setTimeout(function(){ 
 			var warna = $('input[type="radio"]:checked').val();
-	
             $.ajax({
                 url: "<?= base_url('produk/requestColor') ?>",
                 type: "POST",
@@ -89,6 +95,15 @@
 						animation: "slide",
 						controlNav: "thumbnails"
 					});
+					alert(nama_warna);
+                }
+            });
+			$.ajax({
+                url: "<?= base_url('produk/requestColorName') ?>",
+                type: "POST",
+                data: {'warna': warna},
+                success: function (data) {
+					$('#linkwa').attr('href', data);
                 }
             });
 			

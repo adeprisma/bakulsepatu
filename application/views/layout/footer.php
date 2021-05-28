@@ -148,7 +148,7 @@
         </div>
     </div>
     <!--WA chat-->
-    <div style="z-index: 999; left: auto; right: 15px;" id="WAButton" class="floating-wpp">
+    <div style="z-index: 999; left: auto; right: 15px;" id="WAButton">
 
     </div>
 

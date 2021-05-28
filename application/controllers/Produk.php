@@ -167,7 +167,19 @@ class Produk extends MY_Controller
 		$data .= '</div>';
 
 		echo $data;
+	}
 
+	public function requestColorName() {
+		$kode = $_POST['warna'];
+
+		$this->db->join('sepatu', 'sepatu.id_sepatu = gambar.id_sepatu');
+		$this->db->where('gambar.id_gambar', $kode);
+		$sql = $this->db->get('gambar')->row();
+		$nama_warna = strtoupper($sql->nama_warna);
+		$nama_sepatu = $sql->nama_sepatu;
+
+		$url = "https://wa.me/6285655131099?text=Apakah+stok+dengan+nama+produk+%2A$nama_sepatu%2A+warna+%2A$nama_warna%2A+tersedia+%3F";
+		echo $url;
 	}
 		
 }
