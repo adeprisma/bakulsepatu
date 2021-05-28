@@ -87,8 +87,8 @@
                 data: {'warna': warna},
                 success: function (data) {
 					$('#loadingmessage').hide();
-					$('.space').show(500);
-					$('.flexslider').remove();
+					$('.space').attr("style","display: block");
+					// $('.flexslider').remove();
 					$('.images_3_of_2').html(data);
 					$('.space').attr("style","display: none");
 					$('.flexslider').flexslider({

@@ -95,22 +95,22 @@
                                         </div>
                                     </li>
                                     <li class="header">ECOMMERCE</li>
-                                    <li><a href="<?= base_url('admin/publish') ?>" <?= urldecode(uri_string()) == 'admin/publish' ? 'class="active"' : '' ?>><i class="fa fa-edit" aria-hidden="true"></i> Publish product</a></li>
-                                    <li><a href="<?= base_url('admin/products') ?>" <?= urldecode(uri_string()) == 'admin/products' ? 'class="active"' : '' ?>><i class="fa fa-files-o" aria-hidden="true"></i> Products</a></li>
+                                    <li><a href="<?= base_url('admin/publish') ?>"><i class="fa fa-edit" aria-hidden="true"></i> Publish product</a></li>
+                                    <li><a href="#"><i class="fa fa-files-o" aria-hidden="true"></i> Products</a></li>
                                     <?php //if (in_array('blog', $activePages)) { ?>
                                         <li class="header">BLOG</li>
-                                        <li><a href="<?= base_url('admin/blogpublish') ?>" <?= urldecode(uri_string()) == 'admin/blogpublish' ? 'class="active"' : '' ?>><i class="fa fa-edit" aria-hidden="true"></i> Publish post</a></li>
-                                        <li><a href="<?= base_url('admin/blog') ?>" <?= urldecode(uri_string()) == 'admin/blog' ? 'class="active"' : '' ?>><i class="fa fa-th" aria-hidden="true"></i> Posts</a></li>
+                                        <li><a href="#"><i class="fa fa-edit" aria-hidden="true"></i> Publish post</a></li>
+                                        <li><a href="#"><i class="fa fa-th" aria-hidden="true"></i> Posts</a></li>
                                     <?php //} ?>
                                     <li class="header">SETTINGS</li>
-                                    <li><a href="<?= base_url('admin/settings') ?>" <?= urldecode(uri_string()) == 'admin/settings' ? 'class="active"' : '' ?>><i class="fa fa-wrench" aria-hidden="true"></i> Settings</a></li>
-                                    <li><a href="<?= base_url('admin/titles') ?>" <?= urldecode(uri_string()) == 'admin/titles' ? 'class="active"' : '' ?>><i class="fa fa-font" aria-hidden="true"></i> Titles / Descriptions</a></li>
-                                    <li><a href="<?= base_url('admin/pages') ?>" <?= urldecode(uri_string()) == 'admin/pages' ? 'class="active"' : '' ?>><i class="fa fa-file" aria-hidden="true"></i> Active Pages</a></li>
+                                    <li><a href="#"><i class="fa fa-wrench" aria-hidden="true"></i> Settings</a></li>
+                                    <li><a href="#"><i class="fa fa-font" aria-hidden="true"></i> Titles / Descriptions</a></li>
+                                    <li><a href="#"><i class="fa fa-file" aria-hidden="true"></i> Active Pages</a></li>
                                 
-                                    <li><a href="<?= base_url('admin/history') ?>" <?= urldecode(uri_string()) == 'admin/history' ? 'class="active"' : '' ?>><i class="fa fa-history" aria-hidden="true"></i> Activity History</a></li>
+                                    <li><a href="#"><i class="fa fa-history" aria-hidden="true"></i> Activity History</a></li>
                                     <li class="header">ADVANCED SETTINGS</li>
-                                    <li><a href="<?= base_url('admin/filemanager') ?>" <?= urldecode(uri_string()) == 'admin/filemanager' ? 'class="active"' : '' ?>><i class="fa fa-file-code-o" aria-hidden="true"></i> File Manager</a></li>
-                                    <li><a href="<?= base_url('admin/adminusers') ?>" <?= urldecode(uri_string()) == 'admin/adminusers' ? 'class="active"' : '' ?>><i class="fa fa-user" aria-hidden="true"></i> Admin Users</a></li>
+                                    <li><a href="#"><i class="fa fa-file-code-o" aria-hidden="true"></i> File Manager</a></li>
+                                    <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i> Admin Users</a></li>
                                 </ul>
                             </div>
                             <div class="col-sm-9 col-md-9 col-lg-10 col-sm-offset-3 col-md-offset-3 col-lg-offset-2">
