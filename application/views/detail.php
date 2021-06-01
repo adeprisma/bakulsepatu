@@ -102,8 +102,8 @@
                 url: "<?= base_url('produk/requestColorName') ?>",
                 type: "POST",
                 data: {'warna': warna},
-                success: function (data) {
-					$('#linkwa').attr("href", data);
+                success: function (url) {
+					$('#linkwa').attr("href", url);
                 }
             });
 			
