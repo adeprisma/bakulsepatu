@@ -106,7 +106,6 @@
 					$('#linkwa').attr("href", data);
                 }
             });
-			window.location.reload(true);
 			}, 1000);
 		}
 	</script>
