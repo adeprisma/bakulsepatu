@@ -108,6 +108,5 @@
             });
 			
 			}, 1000);
-			windows.location.reload(true);
 		}
 	</script>
