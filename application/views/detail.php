@@ -81,6 +81,7 @@
 			$('#loadingmessage').show('slow');
 			setTimeout(function(){ 
 			var warna = $('input[type="radio"]:checked').val();
+			$('#linkwa').attr('href', null);
             $.ajax({
                 url: "<?= base_url('produk/requestColor') ?>",
                 type: "POST",
@@ -95,7 +96,6 @@
 						animation: "slide",
 						controlNav: "thumbnails"
 					});
-					alert(nama_warna);
                 }
             });
 			$.ajax({
